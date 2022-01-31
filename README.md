@@ -1,8 +1,8 @@
 # ID Assignment 2
 
-One or two paragraphs providing an overview of your project. Tell us about your project.
+COMZONE - Singapore's #1 Customisable High Performance PC Builders.
 
-Essentially, this part is your sales pitch.
+This is a one-stop platform for users to customise and build their own premium quality PC that is suitable for gaming and all kinds of work, as well as contact COMZONE for post-sales technical support and warranty.
  
 ## Design Process
  
@@ -16,25 +16,39 @@ These files should themselves either be included as a pdf file in the project it
 Include the Adobe XD wireframe as a folder. You can include the XD share url. 
 
 ## Features
+Following is a list of all existing features and features left to implement that are available on both laptop and mobile.
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- Animated Navigation Bar - Adds some fun to surfing the website as it changes styles depending on the part of the website the user is looking at.
+- Quick Add - Allows users to add suggested PC builds to their carts.
+- PC Customisation - Allows users to customise their PC parts, by having them click on the different options for each field in a PC Customisation page.
+- Contact Form - Enables users to contact COMZONE.
+- Back To Top Button - Enables users to quickly jump back to the top of the page by clicking this button located at the footer.
+- Social Media Bar - Enables users to quickly teleport to COMZONE' social media accounts.
+- Currency Exchange - Enables users to pick where they are shopping from and the website will automatically convert the pricings on the website to the respective currency.
+- Membership System - Enables users to create and log in to accounts to use the loyalty points systems and check their order history.
+- Loyalty Points - Enables users to earn points which every dollar spent on the website and use these points to redeem for rewards.
+- Loyalty Points Leaderboard - Ranks users based on the amount of points they earned throughout their entire membership lifespan.
+- Shopping Cart - Enables users to add products to their shopping carts. 
+- Checkout System - Enables users to add the relevant information (eg. contact details, cedit card details, shipping and billing addresses) to complete the orders.
 
 ### Features Left to Implement
-- Another feature idea
+- Forums - Facilitates users' discussion of custom PC building at COMZONE.
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
+- [HTML]
+    - The project uses **HTML** to build the structure of the website.
+- [CSS]
+    - The project uses **CSS** to style the looks of the website on both laptop and mobile.
+- [JS](https://www.javascript.com)
+    - The project uses **JS** to add interactivity to the webste.
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
-
+- [Data Protection Notice Generator](https://apps.pdpc.gov.sg/dp-notice-generator)
+    - The project uses **DPN Generator** to generate a Data Protection policy.
+- [Terms and Conditions Generator](https://www.termsandconditionsgenerator.com/)
+    - The project uses **T&C Generator** to generate a Terms and Conditions. 
 
 ## Testing
 
