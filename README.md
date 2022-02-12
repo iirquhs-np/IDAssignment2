@@ -37,9 +37,9 @@ Following is a list of all existing features and features left to implement that
 
 ## Technologies Used
 
-- [HTML]
+- HTML
     - The project uses **HTML** to build the structure of the website.
-- [CSS]
+- CSS
     - The project uses **CSS** to style the looks of the website on both laptop and mobile.
 - [JS](https://www.javascript.com)
     - The project uses **JS** to add interactivity to the webste.
