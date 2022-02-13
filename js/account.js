@@ -1,6 +1,7 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
-const site = "https://github.shuqri.xyz/IDAssignment2/";
+// const site = "https://github.shuqri.xyz/IDAssignment2/";
+const site = "http://127.0.0.1:5500/";
 const userLoggedIn = JSON.parse(localStorage.getItem('userLoggedIn'));
 
 $(document).ready(function () {
@@ -14,7 +15,7 @@ $(document).ready(function () {
         })
 
     } else {
-        if (window.location != site + "login.html") {
+        if (window.location == site + "account.html") {
             window.location.assign(site + "login.html");
         }
         if (window.location == site + "login.html") {
@@ -29,7 +30,7 @@ $(document).ready(function () {
                     "async": true,
                     "crossDomain": true,
                     "url": dbURL,
-                    "method": "GET", //[cher] we will use GET to retrieve info
+                    "method": "GET",
                     "headers": {
                         "content-type": "application/json",
                         "x-apikey": APIKEY,
@@ -40,7 +41,8 @@ $(document).ready(function () {
                     let accExists = false;
                     response.map((account => {
                         if ($("#loginEmail").val() === account.email && $("#loginPassword").val() === account.password) {
-                            setAccount(account._id, account.name);
+                            localStorage.setItem("userLoggedIn", JSON.stringify([account._id, account.name]));
+                            window.location.assign(site + "account.html");
                             accExists = true;
                         }
                     }))
@@ -51,15 +53,36 @@ $(document).ready(function () {
                         console.log("wrong username or password.")
                     }
                 })
+            })
+        } else if (window.location == site + "register.html") {
+            console.log("in register code...")
+            $("#registerSubmit").on("click", function(e) {
+                e.preventDefault();
+                $('#errorMessage').hide();
+                $('#spinner').css("display", "block");
+
+                $.ajax({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": dbURL,
+                    "method": "GET",
+                    "headers": {
+                        "content-type": "application/json",
+                        "x-apikey": APIKEY,
+                        "cache-control": "no-cache"
+                    },
+                }).done(function (response) {
+                    response.map((account) => {
+                        if ($("#registerEmail").val() === account.email) {
+                            $('#errorMessage').show()
+                            $('#errorMessage').html('Account already exists!');
+                            $('#errorMessage').css('color', 'red');
+                        }
+                    })
+                })
 
             })
         }
 
     }
-    function setAccount(id, name) {
-        localStorage.setItem("userLoggedIn", JSON.stringify([id, name]));
-        window.location.assign(site + "account.html");
-
-    }
-
 })
