@@ -1,6 +1,6 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
-const site = "https://comzone.shuqri.xyz/";
+const site = window.location.protocol + '//' + window.location.host + '/';
 // const site = "http://localhost:63342/IDAssignment2/"; // FOR DEBUGGING
 
 $(document).ready(function () {
