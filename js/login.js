@@ -1,7 +1,11 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
-const site = window.location.protocol + '//' + window.location.host + '/';
-// const site = "http://localhost:63342/IDAssignment2/"; // FOR DEBUGGING
+var site = '';
+if (window.location.host === 'comzone.shuqri.xyz') {
+    site = window.location.origin + '/';
+} else {
+    site = window.location.origin + '/IDAssignment2/';
+}
 
 $(document).ready(function () {
     console.log('in login code')
