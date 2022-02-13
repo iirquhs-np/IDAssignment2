@@ -17,13 +17,12 @@ $(document).ready(function () {
         ajaxFunction("GET").done(function (response) {
             $('#spinner').css("display", "none");
             response.forEach(account => {
-                if ($('registerEmail').val != account.email) { // IF ACCOUNT EXISTS
+                if ($('registerEmail').val == account.email) { // IF ACCOUNT EXISTS
                     console.log("account exists")
                     $('#errorMessage').show()
                     $('#errorMessage').html('Account already exists!');
                     $('#errorMessage').css('color', 'red');
                 } else {
-
                     createAccount();
                 }
             })
