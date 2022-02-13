@@ -1,5 +1,5 @@
 const userLoggedIn = localStorage.getItem('userLoggedIn');
-const site = "https://comzone.shuqri.xyz/";
+const site = window.location.protocol + '//' + window.location.host + '/';
 // const site = "http://localhost:63342/IDAssignment2/"; // FOR DEBUGGING
 
 $(document).ready(function () {
