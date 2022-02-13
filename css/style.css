@@ -115,3 +115,33 @@ ul {
 .social-icon:hover i {
   transform: scale(1.1)
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.pro-img-block,
+.pro-text-block{
+  --s:100px;
+  width: 80%;
+}
+
+.pro-img-block {
+  height: 600px;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - var(--s)));
+}
+
+.pro-text-block {
+  height: 150px;
+  /* a little smaller than --s to create a gap */
+  margin-top: calc(var(--s) * -1  + 10px);
+  clip-path:polygon(0 0,100% var(--s),100% 100%,0 100%);
+}
+
+.pro-img-block img {
+  object-fit: cover;
+  object-position: 100% 27%;
+  width: 100%;
+  height: 100%;
+}
+
