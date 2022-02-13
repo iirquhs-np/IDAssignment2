@@ -10,7 +10,17 @@ body {
   width: 100%;
   overflow: hidden;
 }
-  
+
+
+header {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
 #hero-banner video {
   position: absolute;
   top: 50%;
@@ -48,7 +58,7 @@ body {
   
 @media (pointer: coarse) and (hover: none) {
   #hero-banner {
-    background-image: url("../img/index/hero-banner-img.png");
+    background-image: url("../assets/img/index/hero-banner-img.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
