@@ -69,7 +69,7 @@ header {
   }
 }
 
-ul {
+.social-icon-ul {
   list-style: none;
   display: flex;
   margin-bottom: 0
