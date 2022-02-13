@@ -1,9 +1,9 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
-/*
 const site = "https://github.shuqri.xyz/IDAssignment2/";
-*/
+/*
 const site = "http://localhost:63342/IDAssignment2/"; // FOR DEBUGGING
+*/
 const userLoggedIn = localStorage.getItem('userLoggedIn');
 
 $(document).ready(function () {
