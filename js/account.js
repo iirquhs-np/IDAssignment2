@@ -17,7 +17,7 @@ $(document).ready(function () {
         })
 
     } else {
-        if (window.location == site + "account.html") {
+        if (window.location === site + "account.html") {
             window.location.assign(site + "login.html");
         }
 

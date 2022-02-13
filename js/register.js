@@ -8,7 +8,6 @@ if (window.location.host === 'comzone.shuqri.xyz') {
 }
 
 $(document).ready(function () {
-    console.log("in register code...")
     $("#registerSubmit").on("click", function(e) {
         e.preventDefault();
         $('#errorMessage').hide();
@@ -16,16 +15,19 @@ $(document).ready(function () {
 
         ajaxFunction("GET").done(function (response) {
             $('#spinner').css("display", "none");
+            var checkAcc = true;
+
             response.forEach(account => {
-                if ($('registerEmail').val == account.email) { // IF ACCOUNT EXISTS
-                    console.log("account exists")
+                if ($('#registerEmail').val() === account.email) { // IF ACCOUNT EXISTS
                     $('#errorMessage').show()
                     $('#errorMessage').html('Account already exists!');
                     $('#errorMessage').css('color', 'red');
-                } else {
-                    createAccount();
+                    checkAcc = false;
                 }
             })
+            if (checkAcc) {
+                createAccount();
+            }
         })
     })
 })
@@ -41,7 +43,6 @@ function createAccount() {
         "points": 0
     }
 
-    console.log(JSON.stringify(data))
     ajaxFunction("POST", data).done(function () {
         localStorage.setItem("userLoggedIn", $('#registerEmail').val());
         window.location.assign(site + "account.html");
