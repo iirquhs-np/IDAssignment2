@@ -1,8 +1,8 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
 // const site = "https://github.shuqri.xyz/IDAssignment2/";
-const site = "http://127.0.0.1:5500/";
-const userLoggedIn = JSON.parse(localStorage.getItem('userLoggedIn'));
+const site = "http://localhost:63342/IDAssignment2/";
+const userLoggedIn = localStorage.getItem('userLoggedIn');
 
 $(document).ready(function () {
     if (userLoggedIn != null) { // ACCOUNT PRESENT
@@ -24,28 +24,18 @@ $(document).ready(function () {
                 e.preventDefault();
                 $('#errorMessage').hide();
                 $('#spinner').css("display", "block");
-                // idea: create a loading icon beside submit
 
-                $.ajax({
-                    "async": true,
-                    "crossDomain": true,
-                    "url": dbURL,
-                    "method": "GET",
-                    "headers": {
-                        "content-type": "application/json",
-                        "x-apikey": APIKEY,
-                        "cache-control": "no-cache"
-                    },
-                }).done(function (response) {
+                ajaxFunction("GET", null).done(function (response) {
                     $('#spinner').css("display", "none");
                     let accExists = false;
-                    response.map((account => {
+                    for (let account in response) {
                         if ($("#loginEmail").val() === account.email && $("#loginPassword").val() === account.password) {
-                            localStorage.setItem("userLoggedIn", JSON.stringify([account._id, account.name]));
+                            localStorage.setItem("userLoggedIn", account.email);
                             window.location.assign(site + "account.html");
                             accExists = true;
                         }
-                    }))
+                    }
+
                     if (!accExists) {
                         $('#errorMessage').show()
                         $('#errorMessage').html('Wrong username or password?');
@@ -61,28 +51,70 @@ $(document).ready(function () {
                 $('#errorMessage').hide();
                 $('#spinner').css("display", "block");
 
-                $.ajax({
-                    "async": true,
-                    "crossDomain": true,
-                    "url": dbURL,
-                    "method": "GET",
-                    "headers": {
-                        "content-type": "application/json",
-                        "x-apikey": APIKEY,
-                        "cache-control": "no-cache"
-                    },
-                }).done(function (response) {
-                    response.map((account) => {
-                        if ($("#registerEmail").val() === account.email) {
+                ajaxFunction("GET").done(function (response) {
+                    $('#spinner').css("display", "none");
+                    for (let account in response) {
+                        if ($('registerEmail').val != account.email) {
+                            createAccount();
+                            break;
+                        } else {
+                            console.log("account exists")
                             $('#errorMessage').show()
                             $('#errorMessage').html('Account already exists!');
                             $('#errorMessage').css('color', 'red');
                         }
-                    })
+                    }
                 })
-
             })
         }
 
     }
 })
+
+function createAccount() {
+
+    let data = {
+        "email": $('#registerEmail').val(),
+        "firstName": $('#registerFirstName').val(),
+        "lastName": $('#registerLastName').val(),
+        "password": $('#registerPassword').val(),
+        "dateOfBirth": $('#registerDOB').val(),
+        "points": 0
+    }
+
+    console.log(JSON.stringify(data))
+    ajaxFunction("POST", data).done(function () {
+        localStorage.setItem("userLoggedIn", $('#registerEmail').val());
+        window.location.assign(site + "account.html");
+    })
+}
+
+function ajaxFunction (m, data) {
+    if (m === "GET") {
+        return $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": dbURL,
+            "method": m,
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
+            },
+        })
+    } else if (m === "POST") {
+        return $.ajax({
+            "async": true,
+            "crossDomain": true,
+            "url": dbURL,
+            "method": m,
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(data)
+        })
+    }
+}
