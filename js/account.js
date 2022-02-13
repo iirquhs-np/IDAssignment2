@@ -1,7 +1,9 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
+/*
 const site = "https://github.shuqri.xyz/IDAssignment2/";
-// const site = "http://localhost:63342/IDAssignment2/"; // FOR DEBUGGING
+*/
+const site = "http://localhost:63342/IDAssignment2/"; // FOR DEBUGGING
 const userLoggedIn = localStorage.getItem('userLoggedIn');
 
 $(document).ready(function () {
@@ -28,14 +30,13 @@ $(document).ready(function () {
                 ajaxFunction("GET", null).done(function (response) {
                     $('#spinner').css("display", "none");
                     let accExists = false;
-                    for (let account in response) {
+                    response.map((account => {
                         if ($("#loginEmail").val() === account.email && $("#loginPassword").val() === account.password) {
-                            localStorage.setItem("userLoggedIn", account.email);
+                            localStorage.setItem("userLoggedIn", JSON.stringify([account._id, account.name]));
                             window.location.assign(site + "account.html");
                             accExists = true;
                         }
-                    }
-
+                    }))
                     if (!accExists) {
                         $('#errorMessage').show()
                         $('#errorMessage').html('Wrong username or password?');
