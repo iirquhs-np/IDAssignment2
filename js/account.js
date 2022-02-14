@@ -8,7 +8,7 @@ $("account-overview").hide();
 
 // CHECK SITE URL
 var site = "";
-if (window.location.host === "comzone.shuqri.xyz") {
+if (window.location.host === "id-assignment-2-4bw4h.ondigitalocean.app") {
     site = window.location.origin + "/";
 } else {
     site = window.location.origin + "/IDAssignment2/";
