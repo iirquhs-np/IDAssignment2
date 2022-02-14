@@ -2,14 +2,6 @@
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
 
-// CHECK SITE URL
-let site = "";
-if (window.location.host === "id-assignment-2-4bw4h.ondigitalocean.app") {
-    site = window.location.origin + "/";
-} else {
-    site = window.location.origin + "/IDAssignment2/";
-}
-
 // MAIN CODE
 $(document).ready(function () {
     $("#registerSubmit").on("click", function (e) {
@@ -61,7 +53,7 @@ function createAccount(email, fn, ln, pwd, dob) {
 
     ajaxFuncPOST(data).done(function () {
         localStorage.setItem("userAccount", email);
-        window.location.assign(site + "account.html");
+        window.location.assign("../account.html");
     });
 }
 
