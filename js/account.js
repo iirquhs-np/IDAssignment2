@@ -1,62 +1,54 @@
-const userLoggedIn = localStorage.getItem('userLoggedIn');
+// INITIALISE CONSTANTS
+const userAccount = localStorage.getItem("userAccount");
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
-$('#account-overview').hide()
-var site = '';
-if (window.location.host === 'comzone.shuqri.xyz') {
-    site = window.location.origin + '/';
+
+// HIDE ACCOUNT OVERVIEW DIV
+$("account-overview").hide();
+
+// CHECK SITE URL
+var site = "";
+if (window.location.host === "comzone.shuqri.xyz") {
+    site = window.location.origin + "/";
 } else {
-    site = window.location.origin + '/IDAssignment2/';
+    site = window.location.origin + "/IDAssignment2/";
 }
 
-$(document).ready(function () {
-
-
-    if (userLoggedIn == null) { // Account not present
-        if (window.location == site + "account.html") {
-            window.location.assign(site + "login.html");
-        }
-
+// MAIN CODE
+$(window).ready(function () {
+    if (userAccount == null) {
+        // IF USER ACCOUNT IS NOT PRESENT, ASK USER TO LOG IN.
+        console.log("REDIRECTING TO LOGIN.HTML")
+        window.location.replace("login.html");
     } else {
-        // SHOW ACCOUNT DETAILS
-        console.log('show account details');
-        ajaxFunction("GET").done(function (response) {
-            $('#account-overview').show()
+        // IF USER ACCOUNT IS PRESENT, SHOW ACCOUNT DETAILS
+        ajaxFuncGET().done(function (response) {
+            console.log("SHOWING ACCOUNT DETAILS...")
+            $("#account-overview").show();
 
-            console.log('in ajax');
-            console.log(userLoggedIn);
             response.map(account => {
-                console.log(account.email);
-                if (account.email === userLoggedIn) {
-                    let name = account.firstName + ' ' + account.lastName;
-                    $('#account-greeting').html('Hi, ' + name + '!');
-                    $('#account-points').html('Current points: ' + account.points);
+                if (account.email === userAccount) {
+                    let name = account.firstName + " " + account.lastName;
+                    $("#account-greeting").html("Hi, " + name + "!");
+                    $("account-points").html("Current points: " + account.points);
                 }
-            })
-        })
-
-
-
-
-        $('#account-logout').on('click', function () {
-            localStorage.removeItem('userLoggedIn');
-            console.log('removed account');
-            location.assign(site);
-        })
-
+            });
+        });
     }
-})
+});
 
-function ajaxFunction (m) {
+
+// AJAX TO ACCESS DATABASE
+function ajaxFuncGET() {
     return $.ajax({
         "async": true,
         "crossDomain": true,
         "url": dbURL,
-        "method": m,
+        "method": "GET",
         "headers": {
             "content-type": "application/json",
             "x-apikey": APIKEY,
             "cache-control": "no-cache"
         }
-    })
+    });
 }
