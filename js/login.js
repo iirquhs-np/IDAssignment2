@@ -26,7 +26,7 @@ $(window).ready(function () {
             response.map(account => {
                 if ($("#loginEmail").val() === account.email && $("#loginPassword").val() === account.password) {
                     localStorage.setItem("userAccount", account.email);
-                    window.location.replace(site + "account.html");
+                    window.location.assign(site + "account.html");
                     accountExists = true;
                 }
             });

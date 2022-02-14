@@ -50,7 +50,7 @@ function createAccount() {
 
     ajaxFuncPOST(data).done(function () {
         localStorage.setItem("userAccount", $("registerEmail").val());
-        window.location.replace(site + "account.html");
+        window.location.assign(site + "account.html");
     });
 }
 

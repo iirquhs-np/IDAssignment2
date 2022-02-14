@@ -18,12 +18,12 @@ if (window.location.host === "id-assignment-2-4bw4h.ondigitalocean.app") {
 $(window).ready(function () {
     if (userAccount == null) {
         // IF USER ACCOUNT IS NOT PRESENT, ASK USER TO LOG IN.
-        console.log("REDIRECTING TO LOGIN.HTML")
+        console.log("REDIRECTING TO LOGIN.HTML");
         window.location.replace("login.html");
     } else {
         // IF USER ACCOUNT IS PRESENT, SHOW ACCOUNT DETAILS
         ajaxFuncGET().done(function (response) {
-            console.log("SHOWING ACCOUNT DETAILS...")
+            console.log("SHOWING ACCOUNT DETAILS...");
             $("#account-overview").show();
 
             response.map(account => {
