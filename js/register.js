@@ -3,7 +3,7 @@ const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
 
 // CHECK SITE URL
-var site = "";
+let site = "";
 if (window.location.host === "id-assignment-2-4bw4h.ondigitalocean.app") {
     site = window.location.origin + "/";
 } else {
@@ -11,45 +11,56 @@ if (window.location.host === "id-assignment-2-4bw4h.ondigitalocean.app") {
 }
 
 // MAIN CODE
-$(window).ready(function () {
+$(document).ready(function () {
     $("#registerSubmit").on("click", function (e) {
         e.preventDefault();
-        $("#errorMessage").hide();
-        $("#spinner").css("display", "block");
+
+        // INITIALISING SELECTORS
+        let uEmail = $("#registerEmail").val();
+        let uFN = $("#registerFirstName").val();
+        let uLN = $("#registerLastName").val();
+        let uPwd = $("#registerPassword").val();
+        let uDOB = $("#registerDOB").val();
+        let errorMsg = $("#errorMessage");
+        let spinner = $("#spinner");
+
+
+        errorMsg.hide();
+        spinner.css("display", "block");
 
         ajaxFuncGET("GET").done(function (response) {
-            $("#spinner").css("display", "none");
+            spinner.css("display", "none");
             let checkAcc = true;
 
             response.map(account => {
-                if ($("#registerEmail").val() === account.email) {
-                    $("#errorMessage").show();
-                    $("#errorMessage").html("Account already exists!");
-                    $("#errorMessage").css("color", "red");
+                if (uEmail === account.email) {
+                    errorMsg.show();
+                    errorMsg.html("Account already exists!");
+                    errorMsg.css("color", "red");
                     checkAcc = false;
                 }
             });
 
             if (checkAcc) {
-                createAccount();
+                createAccount(uEmail, uFN, uLN, uPwd, uDOB);
             }
         });
     });
 });
 
 // CREATE ACCOUNT
-function createAccount() {
+function createAccount(email, fn, ln, pwd, dob) {
     let data = {
-        "email": $("#registerEmail").val(),
-        "firstName": $("#registerFirstName").val(),
-        "lastName": $("#registerLastName").val(),
-        "password": $("#registerPassword").val(),
-        "dateOfBirth": $("#registerDOB").val(),
+        "email": email,
+        "firstName": fn,
+        "lastName": ln,
+        "password": pwd,
+        "dateOfBirth": dob,
         "points": 0
     };
 
     ajaxFuncPOST(data).done(function () {
-        localStorage.setItem("userAccount", $("registerEmail").val());
+        localStorage.setItem("userAccount", email);
         window.location.assign(site + "account.html");
     });
 }
@@ -70,7 +81,7 @@ function ajaxFuncGET() {
     });
 }
 
-function ajaxFuncPOST(m, data) {
+function ajaxFuncPOST(data) {
     return $.ajax({
         "async": true,
         "crossDomain": true,

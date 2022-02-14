@@ -51,14 +51,21 @@
     <div class="container my-5">
         <div class="mb-5">
             <h1 class="mb-3 text-center"><strong>My Account Details</strong></h1>
-            <h3 id="account-greeting">Loading...</h3>
+            <h3 id="display-greeting">Loading...</h3>
         </div>
 
-        <div id="account-overview">
+        <div id="display-overview">
             <h5 class="mb-3">Account Overview</h5>
-            <p id="account-points"></p>
-            <p id="account-id"></p>
-            <button type="button" class="btn btn-danger" id="account-logout">LOG OUT</button>
+            <div>
+                <span>Registered email:</span>
+                <span id="display-email"></span>
+            </div>
+            <div>
+                <span>Current points:</span>
+                <span id="display-points"></span>
+            </div>
+            <br>
+            <button type="button" class="btn btn-danger" id="display-logout">LOG OUT</button>
         </div>
 
     </div>
