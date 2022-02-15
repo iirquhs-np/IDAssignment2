@@ -103,7 +103,7 @@ function createAccount(email, fn, ln, pwd, dob) {
             response.map(account => {
                 if (account.email === email) {
                     localStorage.setItem("userAccount", account._id);
-                    window.location.assign("../account.html");
+                    window.location.assign("account.html");
 
                 }
                 else {
