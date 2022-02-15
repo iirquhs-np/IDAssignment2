@@ -21,7 +21,7 @@ $(document).ready(function () {
             errorMsg.hide();
             spinner.css("display", "block");
 
-            ajaxFuncGET("GET").done(function (response) {
+            ajaxFuncGET().done(function (response) {
                 spinner.css("display", "none");
                 let checkAcc = true;
 
@@ -99,8 +99,18 @@ function createAccount(email, fn, ln, pwd, dob) {
     };
 
     ajaxFuncPOST(data).done(function () {
-        localStorage.setItem("userAccount", email);
-        window.location.assign("../account.html");
+        ajaxFuncGET().done(function (response) {
+            response.map(account => {
+                if (account.email === email) {
+                    localStorage.setItem("userAccount", account._id);
+                    window.location.assign("../account.html");
+
+                }
+                else {
+                    window.location.assign("index.html");
+                }
+            })
+        });
     });
 }
 

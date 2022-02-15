@@ -4,11 +4,8 @@ const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
 
 $(document).ready(function () {
-    $("#spinner").show();
-    $("#leaderboard").hide();
     ajaxFuncGET().done(function (response) {
         let content = "";
-
 
         let leaderboardArray = [];
         for (let i = 0; i < response.length; i++) {
