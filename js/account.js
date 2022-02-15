@@ -15,33 +15,29 @@ $(document).ready(function () {
     // HIDE ACCOUNT OVERVIEW DIV
     displayOverview.hide();
 
-    if (userAccount == null) {
-        // IF USER ACCOUNT IS NOT PRESENT, ASK USER TO LOG IN.
-        window.location.replace("login.html");
-    } else {
-        displayLogout.on("click", function () {
-            localStorage.clear();
-            window.location.assign("index.html");
+    // IF USER CLICKS LOG OUT
+    displayLogout.on("click", function () {
+        localStorage.clear();
+        window.location.assign("index.html");
+    });
+
+    // SHOW ACCOUNT DETAILS
+    ajaxFuncGET().done(function (response) {
+        displayOverview.show();
+
+        response.map(account => {
+            if (account.email === userAccount) {
+                let name = account.firstName + " " + account.lastName;
+                let points = account.points;
+                let email = account.email;
+
+                displayGreeting.html("Hi, " + name + "!");
+
+                displayEmail.html(email);
+                displayPoints.html(points);
+            }
         });
-
-        // IF USER ACCOUNT IS PRESENT, SHOW ACCOUNT DETAILS
-        ajaxFuncGET().done(function (response) {
-            displayOverview.show();
-
-            response.map(account => {
-                if (account.email === userAccount) {
-                    let name = account.firstName + " " + account.lastName;
-                    let points = account.points;
-                    let email = account.email;
-
-                    displayGreeting.html("Hi, " + name + "!");
-
-                    displayEmail.html(email);
-                    displayPoints.html(points);
-                }
-            });
-        });
-    }
+    });
 });
 
 

@@ -2,6 +2,11 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
+
+#account-button > img {
+  cursor: pointer;
+}
+
 #btn-back-to-top {
   position: fixed;
   bottom: 20px;
