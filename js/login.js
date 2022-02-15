@@ -1,49 +1,61 @@
+// INITIALISE CONSTANTS
+const userAccount = localStorage.getItem("userAccount");
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
-var site = '';
-if (window.location.host === 'comzone.shuqri.xyz') {
-    site = window.location.origin + '/';
-} else {
-    site = window.location.origin + '/IDAssignment2/';
-}
 
+// MAIN CODE
 $(document).ready(function () {
-    console.log('in login code')
-    $("#loginSubmit").on("click", function(e) {
+    let submitButton = $("#loginSubmit");
+    let errorMsg = $("#errorMessage");
+    let spinner = $("#spinner");
+
+    
+    // WHEN USER CLICKS LOG IN BUTTON
+    submitButton.on("click", function (e) {
         e.preventDefault();
-        $('#errorMessage').hide();
-        $('#spinner').css("display", "block");
 
-        ajaxFunction("GET").done(function (response) {
-            $('#spinner').css("display", "none");
-            let accExists = false;
+        let uEmail = $("#loginEmail").val();
+        let uPwd = $("#loginPassword").val();
+        
+        errorMsg.hide();
+        spinner.css('display', 'block');
+
+        ajaxFuncGET().done(function (response) {
+            spinner.css('display', 'none');
+
+            let accountExists = false;
             response.map(account => {
-                if ($("#loginEmail").val() === account.email && $("#loginPassword").val() === account.password) {
-                    localStorage.setItem("userLoggedIn", account.email);
-                    window.location.assign(site + "account.html");
-                    accExists = true;
-                }
-            })
-            if (!accExists) {
-                $('#errorMessage').show()
-                $('#errorMessage').html('Wrong username or password?');
-                $('#errorMessage').css('color', 'red');
-                console.log("wrong username or password.")
-            }
-        })
-    })
-})
+                let responseEmail = account.email;
+                let responsePwd = account.password
 
-function ajaxFunction (m) {
+                if (uEmail === responseEmail && uPwd === responsePwd) {
+                    localStorage.setItem("userAccount", responseEmail);
+                    window.location.assign("account.html");
+                    accountExists = true;
+                }
+            });
+
+            if (!accountExists) {
+                errorMsg.show();
+                errorMsg.html("Wrong username or password?");
+                errorMsg.css("color", "red");
+            }
+        });
+    });
+});
+
+
+// AJAX TO ACCESS DATABASE
+function ajaxFuncGET() {
     return $.ajax({
         "async": true,
         "crossDomain": true,
         "url": dbURL,
-        "method": m,
+        "method": "GET",
         "headers": {
             "content-type": "application/json",
             "x-apikey": APIKEY,
             "cache-control": "no-cache"
         }
-    })
+    });
 }

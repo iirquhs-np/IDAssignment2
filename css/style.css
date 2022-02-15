@@ -2,6 +2,18 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
+
+#account-button > img {
+  cursor: pointer;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
 #hero-banner {
   position: relative;
   background-color: black;

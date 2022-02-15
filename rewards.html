@@ -8,6 +8,9 @@
     <!-- TITLE -->
     <title>COMZONE - Singapore's #1 Customisable High Performance PC Builders</title>
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +19,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/spinner.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
@@ -48,28 +52,40 @@
     </div>
     <!-- NAVIGATION BAR: END -->
 
-    <div class="container my-5">
-        <div class="mb-5">
-            <h1 class="mb-3 text-center"><strong>My Account Details</strong></h1>
-            <h3 id="display-greeting">Loading...</h3>
-        </div>
 
-        <div id="display-overview">
-            <h5 class="mb-3">Account Overview</h5>
-            <div>
-                <span>Registered email:</span>
-                <span id="display-email"></span>
+    <!-- LEADERBOARD: START-->
+    <div class="container py-5">
+        <h2 class="text-center"><strong>LEADERBOARD</strong></h2>
+        <div class="row justify-content-center">
+            <div id="spinner" class="loadingio-spinner-spinner-2bx6ng5j2dc col-1">
+                <div class="ldio-9tisb9ooc7p">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
-            <div>
-                <span>Current points:</span>
-                <span id="display-points"></span>
-            </div>
-            <br>
-            <button type="button" class="btn btn-danger" id="display-logout">LOG OUT</button>
         </div>
-
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <table class="table" id="leaderboard">
+                    <thead>
+                    <th>Name</th>
+                    <th>Score</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
+    <!-- LEADERBOARD: END -->
 
     <!-- FOOTER: START -->
     <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
@@ -113,21 +129,20 @@
                 <div class="col-md-6">
                     <span>&copy; 2022 COMZONE. All Rights Reserved.<br></span>
                     <span style="font-size: 12px;">DESIGNED BY <a href="https://www.github.com/gg2shadow" class="text-decoration-none">XIAO YAOJIE</a> &
-                        <a href="https://www.github.com/iirquhs-np" class="text-decoration-none">SHUQRI SHAIFUDDIN</a></span>
+                            <a href="https://www.github.com/iirquhs-np" class="text-decoration-none">SHUQRI SHAIFUDDIN</a></span>
                 </div>
                 <div class="col-md-6 mt-3">
                     <div class="text-start text-md-end">
-                        <span>
-                            <a href="termsofservice.html" class="text-white text-decoration-none">Terms of Service</a> |
-                            <a href="datanotice.html" class="text-white text-decoration-none">Data Protection Notice</a>
-                        </span>
+                            <span>
+                                <a href="termsofservice.html" class="text-white text-decoration-none">Terms of Service</a> |
+                                <a href="datanotice.html" class="text-white text-decoration-none">Data Protection Notice</a>
+                            </span>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- FOOTER: END -->
-
 
     <!-- BACK TO TOP BUTTON: START -->
     <button
@@ -146,6 +161,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/account.js"></script>
+    <script src="js/leaderboard.js"></script>
 </body>
 </html>
