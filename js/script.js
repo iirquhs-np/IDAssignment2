@@ -47,13 +47,13 @@ $(document).ready(function () {
             document.body.scrollTop > 20 ||
             document.documentElement.scrollTop > 20
         ) {
-            myButton.style.display = "block";
+            myButton.css("display", "block");
         } else {
-            myButton.style.display = "none";
+            myButton.css("display", "none");
         }
     }
     // When the user clicks on the button, scroll to the top of the document
-    myButton.addEventListener("click", backToTop);
+    myButton.on("click", backToTop);
 
     function backToTop() {
         document.body.scrollTop = 0;

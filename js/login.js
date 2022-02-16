@@ -1,5 +1,4 @@
 // INITIALISE CONSTANTS
-const userAccount = localStorage.getItem("userAccount");
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
 
@@ -25,11 +24,12 @@ $(document).ready(function () {
 
             let accountExists = false;
             response.map(account => {
+                let responseID = account._id;
                 let responseEmail = account.email;
                 let responsePwd = account.password
 
                 if (uEmail === responseEmail && uPwd === responsePwd) {
-                    localStorage.setItem("userAccount", responseEmail);
+                    localStorage.setItem("userAccount", responseID);
                     window.location.assign("account.html");
                     accountExists = true;
                 }
