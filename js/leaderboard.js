@@ -22,11 +22,26 @@ $(document).ready(function () {
 
         for (let i = 0; i < leaderboardArray.length && i < 10; i++) {
             let id = leaderboardArray[i].id;
+            let rankIcon = "";
             let name = leaderboardArray[i].name;
             let points = leaderboardArray[i].points;
+            
+            if (i == 0) {
+                rankIcon = "<img src=\"assets/img/rewards/leaderboard-first.png\"/>"
+            }
+            else if (i == 1) {
+                rankIcon = "<img src=\"assets/img/rewards/leaderboard-second.png\"/>"
+            }
+            else if (i == 2) {
+                rankIcon = "<img src=\"assets/img/rewards/leaderboard-third.png\"/>"
+            }
+            else {
+                rankIcon = i+1;
+            }
 
             content = `${content}
                             <tr id='${id}'>
+                                <td class="text-center" style="width: 50px;">${rankIcon}</td>
                                 <td>${name}</td>
                                 <td>${points}</td>`
         }
