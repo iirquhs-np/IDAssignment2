@@ -8,11 +8,21 @@ const userAccount = localStorage.getItem("userAccount");
 $(document).ready(function () {
     // IF USER CLICKS ON ACCOUNT BUTTON
     $("#account-button").on("click", function () {
-        if (userAccount == null) {
-            window.location.assign("login.html");
+        if (!window.location.pathname.includes("configuration")) {
+            if (userAccount == null) {
+                window.location.assign("login.html");
+            }
+            else {
+                window.location.assign("account.html");
+            }
         }
         else {
-            window.location.assign("account.html");
+            if (userAccount == null) {
+                window.location.assign("../login.html");
+            }
+            else {
+                window.location.assign("../account.html");
+            }
         }
     });
 
