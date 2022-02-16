@@ -12,7 +12,7 @@ $(document).ready(function () {
             window.location.assign("login.html");
         }
         else {
-            window.location.assign("account.html")
+            window.location.assign("account.html");
         }
     });
 
