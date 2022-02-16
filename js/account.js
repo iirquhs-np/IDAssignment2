@@ -18,10 +18,10 @@ $(document).ready(function () {
 
     // SHOW ACCOUNT DETAILS
     ajaxFuncGET().done(function (response) {
-        response.map(account => {
-            if (account._id === userAccount) {
-                let name = account.firstName + " " + account.lastName;
-                let dob = new Date(account.dateOfBirth);
+        response.map(acc => {
+            if (acc._id === userAccount) {
+                let name = acc.firstName + " " + acc.lastName;
+                let dob = new Date(acc.dateOfBirth);
                 let day = dob.getDate();
                 let month = dob.getMonth() + 1;
                 let year = dob.getFullYear();
@@ -32,9 +32,9 @@ $(document).ready(function () {
                 overview.show();
                 greeting.html(`<strong>Hi, ${name}!</strong>`);
                 $("#overview-name").html(name)
-                $("#overview-email").html(account.email);
+                $("#overview-email").html(acc.email);
                 $("#overview-birthday").html(birthday)
-                $("#overview-points").html(account.points);
+                $("#overview-points").html(acc.points);
             }
         });
     });
@@ -61,10 +61,10 @@ $(document).ready(function () {
         }
         else {
             ajaxFuncGET().done(function (response) {
-                response.map(account => {
-                    if (account._id === userAccount) {
+                response.map(acc => {
+                    if (acc._id === userAccount) {
                         $("#chPwd-spinner").hide();
-                        if (currentPwd !== account.password) {
+                        if (currentPwd !== acc.password) {
                             errorMsg.show();
                             errorMsg.html("Old password doesn't match!");
                             errorMsg.css("color", "red");
@@ -85,6 +85,42 @@ $(document).ready(function () {
                 });
             });
         }
+    });
+
+    // DELETE ACCOUNT
+    $("#deleteAccountButton").on("click", function (e) {
+        e.preventDefault();
+        let pwd = $("#deleteAccount-password").val();
+        let errorMsg = $("#deleteAccount-error");
+        let spinner = $("#deleteAccount-spinner");
+
+        errorMsg.hide();
+        spinner.show();
+
+        ajaxFuncGET().done(function (response) {
+            let passwordValid = false;
+            response.map(acc => {
+                if (acc.password === pwd) {
+                    passwordValid = true;
+                    ajaxFuncDELETE().done(function (response) {
+                        if (response != null) {
+                            errorMsg.show();
+                            errorMsg.html("Deleting your account");
+                            errorMsg.css("color", "red");
+                            localStorage.clear();
+                            window.location.assign("index.html");
+                        }
+                    });
+                }
+            });
+
+            if (!passwordValid) {
+                spinner.hide();
+                errorMsg.show();
+                errorMsg.html("Wrong password!");
+                errorMsg.css("color", "red");
+            }
+        });
     });
 });
 
@@ -108,11 +144,10 @@ function ajaxFuncGET() {
 }
 
 function ajaxFuncPUT(data) {
-    let URI = URL + "/" + userAccount
     return $.ajax( {
         "async": true,
         "crossDomain": true,
-        "url": "https://comzone-9f7d.restdb.io/rest/user-accounts/" + userAccount,
+        "url": dbURL + "/" + userAccount,
         "method": "PUT",
         "headers": {
             "content-type": "application/json",
@@ -123,4 +158,18 @@ function ajaxFuncPUT(data) {
         "data": JSON.stringify(data)
 
     });
+}
+
+function ajaxFuncDELETE() {
+    return $.ajax({
+        "async": true,
+        "crossDomain": true,
+        "url": dbURL + "/" + userAccount,
+        "method": "DELETE",
+        "headers": {
+            "content-type": "application/json",
+            "x-apikey": APIKEY,
+            "cache-control": "no-cache"
+        }
+    })
 }

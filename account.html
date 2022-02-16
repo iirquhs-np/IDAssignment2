@@ -51,9 +51,10 @@
     <div class="container my-5">
         <div class="mb-3 row justify-content-center">
             <h1 class="mb-3 text-center"><strong>My Account Details</strong></h1>
-            <div class="d-flex align-items-center col-lg-8">
-                <strong class="spinner">Loading...</strong>
-                <div class="spinner spinner-border ms-auto" role="status" aria-hidden="true"></div>
+            <div class="d-flex justify-content-center">
+                <div class="spinner spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
         </div>
 
@@ -90,7 +91,7 @@
                             </tr>
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-danger" id="logoutButton">LOG OUT</button>
+                        <button type="button" class="btn btn-danger float-end" id="logoutButton">LOG OUT</button>
                     </div>
                     <div class="tab-pane fade" id="nav-change-password" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <form>
@@ -103,9 +104,8 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" id="confirm-password" aria-describedby="passwordHelp" placeholder="Confirm password" required>
                                 <small id="passwordHelp" class="form-text text-muted">At least 8 characters long</small>
-
                             </div>
-                            <button id="changePasswordSubmit" type="submit" class="btn btn-danger mt-2">Confirm</button>
+                            <button id="changePasswordSubmit" type="submit" class="btn btn-danger mt-2 float-end">Confirm</button>
                             <br>
                             <div id="errorMessage" class="mt-2"></div>
                             <div id="chPwd-spinner" class="spinner-border" role="status" style="display: none;">
@@ -113,11 +113,44 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="nav-delete-account" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                    <div class="tab-pane fade" id="nav-delete-account" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <p>
+                            <strong>Are you sure you want to delete your account?</strong> <br>
+                            You will lose your data with points and rewards!
+                        </p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Yes, delete my account!
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <form>
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Account Deletion</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group mb-3">
+                                                <label class="mb-2" for="deleteAccount-password">Please enter your password before continuing:</label>
+                                                <input type="password" class="form-control" id="deleteAccount-password" placeholder="Enter your password" required>
+                                            </div>
+                                            <div id="deleteAccount-error" class="mt-2" style="display: none;"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div id="deleteAccount-spinner" class="spinner-border" role="status" style="display: none;">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button id="deleteAccountButton" type="submit" class="btn btn-danger">Confirm</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <br>
-
             </div>
         </div>
 
