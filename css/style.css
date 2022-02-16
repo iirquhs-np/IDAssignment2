@@ -183,11 +183,6 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
-.white-heading:after {
-  background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
 .heading span {
   font-size: 18px;
@@ -199,36 +194,6 @@ header {
 }
 /*-----Testimonial-------*/
 
-.testimonial:after {
-  position: absolute;
-  top: -0 !important;
-  left: 0;
-  content: " ";
-  background: url(img/testimonial.bg-top.png);
-  background-size: 100% 100px;
-  width: 100%;
-  height: 100px;
-  float: left;
-  z-index: 99;
-}
-
-.testimonial {
-  min-height: 375px;
-  position: relative;
-  background: url(https://i.ibb.co/PTJDkgb/testimonials.jpg);
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-position: center;
-      background-size: cover;
-}
-#testimonial4 .carousel-inner:hover{
-cursor: -moz-grab;
-cursor: -webkit-grab;
-}
-#testimonial4 .carousel-inner:active{
-cursor: -moz-grabbing;
-cursor: -webkit-grabbing;
-}
 #testimonial4 .carousel-inner .item{
 overflow: hidden;
 }
@@ -377,8 +342,8 @@ text-align: center;
   margin: 40px 0 20px 0;
 }
 .testimonial4_slide h4 {
-color: #ffffff;
-font-size: 22px;
+  color: #ffffff;
+  font-size: 22px;
 }
 
 .testimonial .carousel {
@@ -389,3 +354,226 @@ padding-bottom:50px;
   height: 35px;
 }
 /* ------testimonial  close-------*/
+
+.mailing-list-input {
+  width: 80%;
+}
+
+.mailing-btn {
+  min-height: 50px;
+  border-radius: 0;
+  background: #212529 !important;
+  color: #fff !important;
+  font-weight: 300;
+  border-color: #212529 !important;
+}
+
+.mailing-btn:hover {
+  background: #717477 !important;
+  border: #717477 2px solid !important;
+}
+
+.contact-us {
+  display: flex;
+  font-size: 12px;
+  width: 40%;
+}
+
+.contact-us-container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: white;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #666;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+    flex-direction: column;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+    padding: 40px;
+  }
+
+  .screen-body-item {
+    padding: 0;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
