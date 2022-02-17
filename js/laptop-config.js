@@ -2,10 +2,6 @@
 const mainDB = "https://comzone-9f7d.restdb.io/rest/laptop-parts";
 const APIKEY = "6208844f34fd62156585842e";
 
-let formatter = new Intl.NumberFormat('en-SG', {
-    style: 'currency',
-    currency: 'SGD'
-});
 
 $(document).ready(function () {
     $('#cart').scrollToFixed({
@@ -43,12 +39,15 @@ $(document).ready(function () {
     });
 
     // WHEN CLICK ADD TO CART
-    addItemToCart(userCart);
-
+    $("#addToCartButton").on("click", function () {
+        addItemToCart(userCart, basePrice, page);
+    });
 
 });
 
-function addItemToCart(userCart) {
+function addItemToCart(userCart, basePrice, page) {
+    let finalPrice = basePrice + getSubtotal();
+
     $("#addToCartButton").on("click", function () {
         let warrantyName = $('input[name=warranty]:checked')[0].value;
         let cpuName = $('input[name=cpu]:checked')[0].value;
@@ -64,6 +63,7 @@ function addItemToCart(userCart) {
         let professionalColorCalibrationName = $('input[name=professional-color-calibration]:checked')[0].value;
 
         let desktopConfiguration = {
+            "name": page,
             "warranty": warrantyName,
             "cpu": cpuName,
             "gpu": gpuName,
@@ -77,7 +77,7 @@ function addItemToCart(userCart) {
             "dead_pixel_policy": deadPixelPolicyName,
             "professional_color_calibration": professionalColorCalibrationName
         };
-        let cart = [desktopConfiguration, 1];
+        let cart = [desktopConfiguration, 1, finalPrice];
         console.log(cart);
 
         userCart.push(cart);

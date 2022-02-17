@@ -2,11 +2,6 @@
 const mainDB = "https://comzone-9f7d.restdb.io/rest/desktop-parts";
 const APIKEY = "6208844f34fd62156585842e";
 
-let formatter = new Intl.NumberFormat('en-SG', {
-    style: 'currency',
-    currency: 'SGD'
-});
-
 $(document).ready(function () {
     $('#cart').scrollToFixed({
         marginTop: 50,
@@ -37,62 +32,64 @@ $(document).ready(function () {
         });
     });
 
+
     $(document).on("click", function () {
         let price = formatter.format(basePrice + getSubtotal());
         $("#subtotal").html(`<strong>${price}</strong>`);
     });
 
     // WHEN CLICK ADD TO CART
-    addItemToCart(userCart);
-
-
+    $("#addToCartButton").on("click", function () {
+        addItemToCart(userCart, basePrice, page);
+    });
 });
 
-function addItemToCart(userCart) {
-    $("#addToCartButton").on("click", function () {
-        let warrantyName = $('input[name=warranty]:checked')[0].value;
-        let chassisName = $('input[name=chassis]:checked')[0].value;
-        let cpuName =$('input[name=cpu]:checked')[0].value;
-        let motherboardName = $('input[name=motherboard]:checked')[0].value;
-        let gpuName =$('input[name=gpu]:checked')[0].value;
-        let thermalCompoundName = $('input[name=thermal-compound]:checked')[0].value;
-        let ramName = $('input[name=ram]:checked')[0].value;
-        let cpuCoolerName = $('input[name=cpu-cooling-system]:checked')[0].value;
-        let primarySSDName = $('input[name=primary-ssd]:checked')[0].value;
-        let secondarySSDName = $('input[name=secondary-ssd]:checked')[0].value;
-        let hddName = $('input[name=hdd]:checked')[0].value;
-        let chassisFansName = $('input[name=chassis-fans]:checked')[0].value;
-        let psuName = $('input[name=psu]:checked')[0].value;
-        let wirelessLANName = $('input[name=wireless-lan]:checked')[0].value;
-        let osName = $('input[name=os]:checked')[0].value;
+function addItemToCart(userCart, basePrice, page) {
+    let finalPrice = basePrice + getSubtotal();
 
-        let desktopConfiguration = {
-            "warranty": warrantyName,
-            "chassis": chassisName,
-            "cpu": cpuName,
-            "motherboard": motherboardName,
-            "gpu": gpuName,
-            "thermal_compound": thermalCompoundName,
-            "ram": ramName,
-            "cpu_cooling_system": cpuCoolerName,
-            "primary_ssd": primarySSDName,
-            "secondary_ssd": secondarySSDName,
-            "hdd": hddName,
-            "chassis_fans": chassisFansName,
-            "psu": psuName,
-            "wireless_lan": wirelessLANName,
-            "os": osName
-        };
-        let cart = [desktopConfiguration, 1];
-        console.log(cart);
+    let warrantyName = $('input[name=warranty]:checked')[0].value;
+    let chassisName = $('input[name=chassis]:checked')[0].value;
+    let cpuName =$('input[name=cpu]:checked')[0].value;
+    let motherboardName = $('input[name=motherboard]:checked')[0].value;
+    let gpuName =$('input[name=gpu]:checked')[0].value;
+    let thermalCompoundName = $('input[name=thermal-compound]:checked')[0].value;
+    let ramName = $('input[name=ram]:checked')[0].value;
+    let cpuCoolerName = $('input[name=cpu-cooling-system]:checked')[0].value;
+    let primarySSDName = $('input[name=primary-ssd]:checked')[0].value;
+    let secondarySSDName = $('input[name=secondary-ssd]:checked')[0].value;
+    let hddName = $('input[name=hdd]:checked')[0].value;
+    let chassisFansName = $('input[name=chassis-fans]:checked')[0].value;
+    let psuName = $('input[name=psu]:checked')[0].value;
+    let wirelessLANName = $('input[name=wireless-lan]:checked')[0].value;
+    let osName = $('input[name=os]:checked')[0].value;
 
-        userCart.push(cart);
-        console.log(userCart);
-        localStorage.setItem("userCart", JSON.stringify(userCart));
-        window.location.assign("../cart.html");
+    let desktopConfiguration = {
+        "name": page,
+        "warranty": warrantyName,
+        "chassis": chassisName,
+        "cpu": cpuName,
+        "motherboard": motherboardName,
+        "gpu": gpuName,
+        "thermal_compound": thermalCompoundName,
+        "ram": ramName,
+        "cpu_cooling_system": cpuCoolerName,
+        "primary_ssd": primarySSDName,
+        "secondary_ssd": secondarySSDName,
+        "hdd": hddName,
+        "chassis_fans": chassisFansName,
+        "psu": psuName,
+        "wireless_lan": wirelessLANName,
+        "os": osName
+    };
+    let cart = [desktopConfiguration, 1, finalPrice];
+    console.log(cart);
 
-    });
+    userCart.push(cart);
+    console.log(userCart);
+    localStorage.setItem("userCart", JSON.stringify(userCart));
+    window.location.assign("../cart.html");
 }
+
 
 
 function getSubtotal() {
