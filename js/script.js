@@ -97,3 +97,8 @@ $(document).ready(function () {
     }
 
 });
+
+$('#checkout-process .nav-tab').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
