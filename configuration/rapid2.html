@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+              name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <!-- TITLE -->
+        <title>RAPID - Make It Your Own</title>
+        <!-- FAVICON -->
+        <link href="../assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <!-- CSS -->
+        <link href="../css/normalize.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+              rel="stylesheet">
+    </head>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<!-- NAVIGATION BAR: START -->
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light py-2">
+        <a class="navbar-brand" href="../index.html"><strong>COM</strong>ZONE</a> <!-- BRAND LOGO -->
+        <button
+                aria-controls="toggleMobileMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-bs-target="#toggleMobileMenu"
+                data-bs-toggle="collapse"
+                type="button"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-auto text-md-center">
+                <li><a class="nav-link" href="../explore.html">Shop</a></li>
+                <li><a class="nav-link" href="../rewards.html">Rewards</a></li>
+                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#">Support</a></li>
+                <li class="nav-link" id="account-button"><img alt="" src="../assets/img/index/user-interface.png"
+                                                              style="height: 20px;"></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="border-bottom"></div>
+<!-- NAVIGATION BAR: END -->
+
+<!-- CONFIGURATION: START -->
+<h1 class="text-center mt-5">Make It Your Own</h1>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-9">
+            <form class="form-group">
+                <h5>Warranty</h5>
+                <p class="text-secondary">
+                    Enjoy complete peace of mind with COMZONE's renowned after-sales warranty package.
+                    <br><br>
+                    We cover all parts failure with an unbeatable 1-for-1 part exchange policy for failed parts during
+                    the warranty period,
+                    ensuring that you have minimum downtime.
+                    Our warranty package also includes maintenance and cleaning (carry-in) for all desktops,
+                    to ensure your system is performing as you would expect.
+                    Best of all, we offer lifetime support for all systems, and also labour charges are always free for
+                    COMZONE owners.
+                </p>
+                <div id="warranty"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Chassis</h5>
+                <div id="chassis"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>CPU</h5>
+                <p class="text-secondary">
+                    New Intel 12th Generation CPUs are now avaliable!
+                    <br><br>
+                    For Intel K series chips (12600KF, 12700K, 12900KF) or AMD RYZEN 7/9 Processors,
+                    please select a high performance cooler (240 AIO Watercooling, or a powerful aircooling option).
+                </p>
+                <div id="cpu"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group customise--motherboard">
+                <h5>Motherboard</h5>
+                <p class="text-secondary">
+                    Intel processors need to be paired with Intel motherboards, and AMD processors with AMD
+                    motherboards.
+                    <br><br>
+                    Some motherboards come with in-built wireless (as marked out).
+                    When selecting a motherboard with Wi-Fi/Wireless included, you will not need to select a wireless
+                    card option.
+                </p>
+                <div id="motherboard"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>GPU</h5>
+                <p class="text-secondary">
+                    Enjoy new revised lower prices on our RTX 30 series options with our SHOCKTOBER promotion!
+                    Most of our GPU options are ready stock, so do reach out to our friendly team if you need help
+                    selecting your ideal graphics card.
+                    <br><br>
+                    For a limited time only, GIGABYTE, ZOTAC AND ASUS RTX 3070, 3070Ti, 3080, 3080Ti and 3090 cards come
+                    with a free game.
+                </p>
+                <div id="gpu"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Thermal Compound</h5>
+                <p class="text-secondary">
+                    Thermal Compound is a fluid substance which increases the thermal conductivity of a thermal
+                    interface by filling microscopic air-gaps present.
+                    It is often used to aid a component's thermal dissipation via a heat sink,
+                    thus preventing overheating, as is vital in any high performance system.
+                </p>
+                <div id="thermal-compound"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>RAM</h5>
+                <p class="text-secondary">
+                    COMZONE PCs only utilize high performance memory from leading RAM brands such as Klevv, Kingston,
+                    Corsair and ADATA.
+                </p>
+                <div id="ram"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>CPU Cooling System</h5>
+                <p class="text-secondary">
+                    COMZONE offers various cooling systems for your CPU.
+                    From air to water cooling solutions, pick the one that best suits your needs.
+                </p>
+                <div id="cpu-cooling-system"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Primary SSD</h5>
+                <p class="text-secondary">
+                    COMZONE offers a range of the best SSDs from both leading brands and leading in-house models
+                    utilzing cutting edge storage technologies.
+                    <br><br>
+                    Please note that for GEN4 SSDs, a B550, B560, X570 or Z690 motherboard is required.
+                </p>
+                <div id="primary-ssd"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Secondary SSD</h5>
+                <div id="secondary-ssd"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>HDD</h5>
+                <p class="text-secondary">
+                    COMZONE utilizes Toshiba for mechnical drive options.
+                    <br><br>
+                    Toshiba Drives offer great performance and supreme quality, and even our larger 3TB and 4TB
+                    drives are
+                    rated at 7200RPM for greater speed. Most importantly, Toshiba HDDs are renowned for reliability,
+                    a key factor for us when we select any component.
+                </p>
+                <div id="hdd"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Case Lighting</h5>
+                <p class="text-secondary">
+                    LED internal case lights to add that beautiful finishing touch to your COMZONE Gaming Desktop.
+                </p>
+                <div id="case-lighting"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Chassis Fans</h5>
+                <p class="text-secondary">
+                    Chassis fans create airflow in and out of your PC chassis, lowering overall operating
+                    temperatures.
+                </p>
+                <div id="chassis-fans"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form>
+                <div class="form-group">
+                    <h5>PSU</h5>
+                    <p class="text-secondary">
+                        The power supply unit (PSU) of a PC supplies power to the components of the system.
+                        The PSU is extremely important as it greatly determines the longevity of your system.
+                        COMZONE selects only premium branded PSU to ensure that your system is both reliable and
+                        futureproof.
+                        <br><br>
+                        When selecting an RTX 3080 or above, we strongly recommend at least a 750W PSU.
+                        <br>
+                        (Nvidia's official recommendation is 750W and up only)
+                    </p>
+                    <div id="psu"></div>
+                </div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>Wireless LAN</h5>
+                <p class="text-secondary">
+                    Wireless Local Area Networking (LAN) allows devices to communicate within a local home network.
+                    Different wireless options feature varying strength, number of connections and wireless types which
+                    could affect
+                    the speed and reliability of your wireless network connection.
+                </p>
+                <div id="wireless-lan"></div>
+            </form>
+            <div class="mt-4"></div>
+            <hr>
+            <div class="mt-4"></div>
+            <form class="form-group">
+                <h5>OS</h5>
+                <p class="text-secondary">
+                    The Operating System (OS) is the core software that manages the computer hardware resources,
+                    and provides the graphical user interface and drivers to make use of them.
+                    <br><br>
+                    COMZONE is a Microsoft-named partner, and we work closely with Microsoft with only genuine OEM
+                    windows licenses.
+                    You can be assured your Microsoft licenses are genuine and purchased through authorized local
+                    distribution channels.
+                    <br><br>
+                    Be wary of:
+                    <br>
+                    1) Vendors who do not include the COA with your PC, as they have purchased stolen or
+                    unauthorized licenses.
+                    <br>
+                    2) Vendors who have windows 10 at +0 cost, or do not allow you to remove the value of the OS
+                    from a system build.
+                </p>
+                <div id="os"></div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div class="position-fixed">
+                <img alt="" src="../assets/img/explore/aftershock-rapid.png">
+                <h4 class="text-center pt-5 text-uppercase"><strong>Rapid</strong></h4>
+                <p class="text-center">
+                    Subtotal:
+                </p>
+                <h4 class="text-primary text-center" style="line-height: 10px;"><strong><br>$1034.00</strong></h4>
+                <a class="btn btn-primary mx-auto d-block w-25 mt-4" href="#">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CONFIGURATION: END -->
+
+<!-- FOOTER: START -->
+<footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+    <div class="container text-md-start">
+        <div class="row text-md-start">
+            <div class="col-md-3 col-lg-3 col-xl-5 mx-auto mt-3 ms-0">
+                <h5 class="mb-4 font-weight-bold"><strong>COM</strong>ZONE</h5>
+                <p>
+                    Singapore's #1 Customisable High Performance PC Builders.
+                </p>
+                <img alt="" class="me-4" height="80px" src="../assets/img/index/best-badge.png" width="80px">
+                <img alt="" height="80px" src="../assets/img/index/certified-badge.png" width="80px">
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="mb-4 font-weight-bold">NAVIGATION</h5>
+                <p><a class="text-white text-decoration-none" href="../explore.html">Shop</a></p>
+                <p><a class="text-white text-decoration-none" href="#">Rewards</a></p>
+                <p><a class="text-white text-decoration-none" href="#">About</a></p>
+                <p><a class="text-white text-decoration-none" href="#">Support</a></p>
+            </div>
+            <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3">
+                <h5 class="mb-4 ">CONTACT US</h5>
+                <p>
+                    Blk 31, Ngee Ann Polytechnic <br>
+                    535 Clementi Rd, Singapore 599489
+                </p>
+                <p><a class="text-white text-decoration-none" href="mailto:fake_contact@comzone.sg">Email:
+                    fake_contact@comzone.sg</a></p>
+                <div class="d-flex">
+                    <ul class="social-icon-ul ps-0">
+                        <li><span class="social-icon social-facebook"><i class="fab fa-facebook"></i></span></li>
+                        <li><span class="social-icon social-google"><i class="fab fa-google"></i></span></li>
+                        <li><span class="social-icon social-linkedin"><i class="fab fa-linkedin"></i></span></li>
+                        <li><span class="social-icon social-instagram"><i class="fab fa-instagram"></i></span></li>
+                        <li><span class="social-icon social-twitter"><i class="fab fa-twitter"></i></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <span>&copy; 2022 COMZONE. All Rights Reserved.<br></span>
+                <span style="font-size: 12px;">DESIGNED BY <a class="text-decoration-none"
+                                                              href="https://www.github.com/gg2shadow">XIAO YAOJIE</a> &
+                        <a class="text-decoration-none"
+                           href="https://www.github.com/iirquhs-np">SHUQRI SHAIFUDDIN</a></span>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="text-start text-md-end">
+                            <span>
+                            <a class="text-white text-decoration-none"
+                               href="../termsofservice.html">Terms of Service</a> |
+                            <a class="text-white text-decoration-none"
+                               href="../datanotice.html">Data Protection Notice</a>
+                            </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER: END -->
+<!-- BACK TO TOP BUTTON: START -->
+<button
+        class="btn btn-danger btn-floating btn-lg"
+        id="btn-back-to-top"
+        type="button"
+>
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!-- BACK TO TOP BUTTON: END -->
+<!-- JS -->
+<script crossorigin="anonymous"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script crossorigin="anonymous" defer
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/configuration.js"></script>
+</body>
+</html>
