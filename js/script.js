@@ -1,9 +1,12 @@
 // GLOBAL JAVASCRIPT CODE
 
+var formatter = new Intl.NumberFormat('en-SG', {
+    style: 'currency',
+    currency: 'SGD'
+});
 
 // INITIALISE CONSTANTS
 const userAccount = localStorage.getItem("userAccount");
-const userCart = localStorage.getItem("userCart");
 //const country = localStorage.getItem("country");
 
 // MAIN CODE
@@ -33,6 +36,15 @@ $(document).ready(function () {
                             </ul>`
     $("#country-dropdown").html(countrySelector);*/
 
+    // Check amt of items in cart.
+    let cartQty = 0;
+    let userCart = JSON.parse(localStorage.getItem('userCart'));
+    if (userCart !== null) {
+        userCart.forEach(cartObj => {
+            cartQty += cartObj[1];
+        });
+    }
+    $("#cart-qty").html("Cart(" + cartQty + ")");
     // IF USER CLICKS ON ACCOUNT BUTTON
     $("#account-button").on("click", function () {
         if (!window.location.pathname.includes("configuration")) {
