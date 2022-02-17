@@ -3,10 +3,12 @@
 
 // INITIALISE CONSTANTS
 const userAccount = localStorage.getItem("userAccount");
+const userCart = localStorage.getItem("userCart");
 //const country = localStorage.getItem("country");
 
 // MAIN CODE
 $(document).ready(function () {
+
     /*// POSSIBLE COUNTRY SELECTOR
     let countryName = "";
     let flag = ""
@@ -37,6 +39,7 @@ $(document).ready(function () {
             if (userAccount == null) {
                 window.location.assign("login.html");
             } else {
+
                 window.location.assign("account.html");
             }
         } else {
