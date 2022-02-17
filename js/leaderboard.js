@@ -42,8 +42,8 @@ $(document).ready(function () {
             content = `${content}
                             <tr id='${id}'>
                                 <td class="text-center" style="width: 50px;">${rankIcon}</td>
-                                <td>${name}</td>
-                                <td>${points}</td>`
+                                <td class="align-middle">${name}</td>
+                                <td>${points} <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"></td>`
         }
 
         $("#leaderboard tbody").html(content);
