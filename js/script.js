@@ -3,24 +3,46 @@
 
 // INITIALISE CONSTANTS
 const userAccount = localStorage.getItem("userAccount");
+//const country = localStorage.getItem("country");
 
 // MAIN CODE
 $(document).ready(function () {
+    /*// POSSIBLE COUNTRY SELECTOR
+    let countryName = "";
+    let flag = ""
+    let country = "SGP";
+    if (country === "SGP"){
+        flag = `<span class="flag-icon flag-icon-sgp me-1" aria-label="Singapore"></span>`;
+    }
+    else if (country === "MY") {
+        flag = `<span class="flag-icon flag-icon-mys me-1" aria-label="Malaysia"></span>`;
+    }
+    else if (country === "AU") {
+        flag = `<span class="flag-icon flag-icon-aus me-1" aria-label="Australia"></span>`;
+    }
+
+    let countrySelector =  `<button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="countrySelectorButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                ${flag}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="countrySelectorButton">
+                                <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-sgp me-1" aria-label="Singapore"></span>Singapore</a></li>
+                                <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-mys me-1" aria-label="Malaysia"></span>Malaysia</a></li>
+                                <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-aus me-1" aria-label="Australia"></span>Australia</a></li>
+                            </ul>`
+    $("#country-dropdown").html(countrySelector);*/
+
     // IF USER CLICKS ON ACCOUNT BUTTON
     $("#account-button").on("click", function () {
         if (!window.location.pathname.includes("configuration")) {
             if (userAccount == null) {
                 window.location.assign("login.html");
-            }
-            else {
+            } else {
                 window.location.assign("account.html");
             }
-        }
-        else {
+        } else {
             if (userAccount == null) {
                 window.location.assign("../login.html");
-            }
-            else {
+            } else {
                 window.location.assign("../account.html");
             }
         }
@@ -62,6 +84,7 @@ $(document).ready(function () {
             myButton.css("display", "none");
         }
     }
+
     // When the user clicks on the button, scroll to the top of the document
     myButton.on("click", backToTop);
 
@@ -69,4 +92,5 @@ $(document).ready(function () {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
+
 });
