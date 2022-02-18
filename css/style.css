@@ -606,6 +606,19 @@ padding-bottom:50px;
   .product-specs {
     font-size: 15px;
   }
+
+  .rewards-steps {
+    text-align: center !important;
+  }
+
+  .rewards-notes {
+    text-align: center !important;
+    margin: auto 40px;
+  }
+
+  .faq {
+    width: 80% !important;
+  }
 }
 
 input::-webkit-outer-spin-button,
