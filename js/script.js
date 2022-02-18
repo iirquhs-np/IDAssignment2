@@ -81,13 +81,45 @@ function currencyConverter(baseISO4217) {
             baseISO4217 = "CNY";
             localStorage.setItem("country", "China");
         }
-        else if (id === 10) {
-            baseISO4217 = "SGD";
-            localStorage.setItem("country", "Singapore");
+        else if (id === 2) {
+            baseISO4217 = "HKD";
+            localStorage.setItem("country", "Hong Kong");
+        }
+        else if (id === 3) {
+            baseISO4217 = "INR";
+            localStorage.setItem("country", "India");
+        }
+        else if (id === 4) {
+            baseISO4217 = "IDR";
+            localStorage.setItem("country", "Indonesia");
+        }
+        else if (id === 5) {
+            baseISO4217 = "JPY";
+            localStorage.setItem("country", "Japan");
         }
         else if (id === 6) {
             baseISO4217 = "MYR";
             localStorage.setItem("country", "Malaysia");
+        }
+        else if (id === 7) {
+            baseISO4217 = "NZD";
+            localStorage.setItem("country", "New Zealand");
+        }
+        else if (id === 8) {
+            baseISO4217 = "PHP";
+            localStorage.setItem("country", "Philippines");
+        }
+        else if (id === 9) {
+            baseISO4217 = "KRW";
+            localStorage.setItem("country", "Korea");
+        }
+        else if (id === 10) {
+            baseISO4217 = "SGD";
+            localStorage.setItem("country", "Singapore");
+        }
+        else if (id === 11) {
+            baseISO4217 = "TWD";
+            localStorage.setItem("country", "Taiwan");
         }
         else {
             baseISO4217 = "SGD";

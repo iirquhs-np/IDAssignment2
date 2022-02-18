@@ -4,13 +4,16 @@ $(window).on("load", function () {
     getCartDetails(userCart, content);
 
     if (localStorage.getItem("promoCode") !== null) {
-        $("#promo-code").value = localStorage.getItem('promoCode');
+        $("#promo-code").val(localStorage.getItem('promoCode'));
     }
 
     $("#check-out").on("click", function() {
         let promoCode = $("#promo-code").val();
         if (promoCode !== "") {
             localStorage.setItem("promoCode", promoCode);
+        }
+        else {
+            localStorage.removeItem("promoCode");
         }
         window.location.assign("checkout.html");
     })
