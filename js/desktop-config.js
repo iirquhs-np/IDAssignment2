@@ -3,11 +3,13 @@ const mainDB = "https://comzone-9f7d.restdb.io/rest/desktop-parts";
 const APIKEY = "6208844f34fd62156585842e";
 
 $(document).ready(function () {
+    // Sets currency
     let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: countryISO4217
     });
 
+    // Mobile optimisation
     const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
     if (!isMobile) {
         $('#cart').scrollToFixed({
@@ -26,6 +28,7 @@ $(document).ready(function () {
     let path = window.location.pathname;
     let page = path.split("/").pop().replace('.html','');
 
+    // Calculates price
     let priceDB = "https://comzone-9f7d.restdb.io/rest/config-base-price";
     let basePrice = 0;
     ajaxFuncGET(priceDB).done(function (response) {
@@ -68,6 +71,7 @@ $(document).ready(function () {
     });
 });
 
+// Add item to cart
 function addItemToCart(userCart, basePrice, page, formatter) {
     let finalPrice = basePrice + getSubtotal();
 
@@ -112,6 +116,7 @@ function addItemToCart(userCart, basePrice, page, formatter) {
     window.location.assign("../cart.html");
 }
 
+// Get subtotal
 function getSubtotal() {
 
     let warranty = Number($('input[name=warranty]:checked').attr("data-price"));

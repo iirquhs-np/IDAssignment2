@@ -4,6 +4,7 @@ const APIKEY = "6208844f34fd62156585842e";
 
 
 $(document).ready(function () {
+    // Checks currency
     let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: countryISO4217
@@ -13,6 +14,7 @@ $(document).ready(function () {
         marginTop: 50,
     });
 
+    // Checks cart
     let userCart;
     if (localStorage.getItem('userCart') != null) {
         userCart = JSON.parse(localStorage.getItem('userCart'));
@@ -64,6 +66,7 @@ $(document).ready(function () {
 
 });
 
+// Add item to cart
 function addItemToCart(userCart, basePrice, page) {
     let finalPrice = basePrice + getSubtotal();
 
@@ -107,7 +110,7 @@ function addItemToCart(userCart, basePrice, page) {
     });
 }
 
-
+// get subtotal
 function getSubtotal() {
 
     let warranty = Number($('input[name=warranty]:checked').attr("data-price"));

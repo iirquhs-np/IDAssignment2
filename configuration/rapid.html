@@ -3,7 +3,7 @@
 <head>
     <!-- META -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- TITLE -->
@@ -65,8 +65,10 @@
         </div>
     </div>
     <div id="configure-system" class="container mt-2 mt-lg-5 mb-5" style="display: none;">
+        <!-- Left Panel -->
         <div class="row justify-content-between">
             <div class="col-md-8">
+                <!-- Warranty -->
                 <form class="form-group">
                     <h5>Warranty</h5>
                     <p class="text-secondary">
@@ -85,6 +87,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Chassis -->
                 <form class="form-group">
                     <h5>Chassis</h5>
                     <div id="chassis"></div>
@@ -92,6 +95,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- CPU -->
                 <form class="form-group">
                     <h5>CPU</h5>
                     <p class="text-secondary">
@@ -105,6 +109,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Motherboard -->
                 <form class="form-group customise--motherboard">
                     <h5>Motherboard</h5>
                     <p class="text-secondary">
@@ -120,6 +125,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- GPU -->
                 <form class="form-group">
                     <h5>GPU</h5>
                     <p class="text-secondary">
@@ -135,6 +141,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Thermal Compound -->
                 <form class="form-group">
                     <h5>Thermal Compound</h5>
                     <p class="text-secondary">
@@ -148,6 +155,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- RAM -->
                 <form class="form-group">
                     <h5>RAM</h5>
                     <p class="text-secondary">
@@ -159,6 +167,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- CPU Cooling System -->
                 <form class="form-group">
                     <h5>CPU Cooling System</h5>
                     <p class="text-secondary">
@@ -170,6 +179,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Primary SSD -->
                 <form class="form-group">
                     <h5>Primary SSD</h5>
                     <p class="text-secondary">
@@ -183,6 +193,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Secondary SSD -->
                 <form class="form-group">
                     <h5>Secondary SSD</h5>
                     <div id="secondary-ssd"></div>
@@ -190,6 +201,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- HDD -->
                 <form class="form-group">
                     <h5>HDD</h5>
                     <p class="text-secondary">
@@ -205,6 +217,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Case Lighting -->
                 <form class="form-group">
                     <h5>Case Lighting</h5>
                     <p class="text-secondary">
@@ -215,6 +228,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Chassis Fans -->
                 <form class="form-group">
                     <h5>Chassis Fans</h5>
                     <p class="text-secondary">
@@ -227,6 +241,7 @@
                 <hr>
                 <div class="mt-4"></div>
                 <form>
+                    <!-- PSU -->
                     <div class="form-group">
                         <h5>PSU</h5>
                         <p class="text-secondary">
@@ -245,6 +260,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- Wireless LAN -->
                 <form class="form-group">
                     <h5>Wireless LAN</h5>
                     <p class="text-secondary">
@@ -258,6 +274,7 @@
                 <div class="mt-4"></div>
                 <hr>
                 <div class="mt-4"></div>
+                <!-- OS -->
                 <form class="form-group">
                     <h5>OS</h5>
                     <p class="text-secondary">
@@ -281,13 +298,14 @@
                 </form>
             </div>
             <div id="cart" class="col-md-3">
+                <!-- Right Panel -->
                 <div class="row justify-content-center align-center">
                     <img class="mt-3 mt-lg-0" alt="" src="../assets/img/explore/aftershock-rapid.png">
                     <h4 class="text-center pt-5 text-uppercase"><strong>Rapid</strong></h4>
                     <p class="text-center">
                         Subtotal:
                     </p>
-                    <h4 id="subtotal" class="text-primary text-center mb-3" style="line-height: 10px;"><strong></strong></h4>
+                    <h4 id="subtotal" class="text-primary text-center mb-3" style="line-height: 10px;"><strong>0</strong></h4>
                     <div class="d-block mx-auto text-center">
                         <button id="addToCartButton" class="btn btn-primary">Add to Cart</button>
                     </div>
@@ -298,11 +316,10 @@
     <!-- CONFIGURATION: END -->
 
     <!-- CHOOSE COUNTRY MODAL: START -->
-    <div class="modal fade" id="defaultModal" tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
+    <div class="modal fade" id="defaultModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="defaultModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body"></div>
@@ -326,15 +343,15 @@
                     <!-- Company Description -->
                     <p>Singapore's #1 Customisable High Performance PC Builders.</p>
                     <!-- Company Awards -->
-                    <img class="me-4" height="80px" width="80px" src="../assets/img/index/best-badge.png" alt="Best Badge Icon">
-                    <img height="80px" width="80px" src="../assets/img/index/certified-badge.png" alt="Certified Browser Icon">
+                    <img class="me-4" height="80" width="80" src="../assets/img/index/best-badge.png" alt="Best Badge Icon">
+                    <img height="80" width="80" src="../assets/img/index/certified-badge.png" alt="Certified Browser Icon">
                     <!-- Choose Country Button -->
-                    <div class="mb-3" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
-                        <img src="../assets/img/index/location.png" width="20px" height="20px" style="filter: invert(100%);">
+                    <div class="mb-3" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
+                        <img src="../assets/img/index/location.png" width="20" height="20" style="filter: invert(100%)" alt="Location Icon">
                         <p id="current-country" class="ps-1 text-white my-auto"></p>
                     </div>
                     <!-- Choose Country Modal -->
-                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content px-5">
                                 <!-- Header -->
@@ -347,22 +364,22 @@
                                         <div class="row mb-0 mb-lg-3">
                                             <!-- Australia -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Australia</p>
                                             </div>
                                             <!-- China -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">China</p>
                                             </div>
                                             <!-- Hong Kong -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Hong Kong</p>
                                             </div>
                                             <!-- India -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">India</p>
                                             </div>
                                         </div>
@@ -370,22 +387,22 @@
                                         <div class="row mb-0 mb-lg-3">
                                             <!-- Indonesia -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Indonesia</p>
                                             </div>
                                             <!-- Japan -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Japan</p>
                                             </div>
                                             <!-- Malaysia -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Malaysia</p>
                                             </div>
                                             <!-- New Zealand -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">New Zealand</p>
                                             </div>
                                         </div>
@@ -393,22 +410,22 @@
                                         <div class="row">
                                             <!-- Philippines -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Philippines</p>
                                             </div>
                                             <!-- Korea -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Korea</p>
                                             </div>
                                             <!-- Singapore -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Singapore</p>
                                             </div>
                                             <!-- Taiwan -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Taiwan</p>
                                             </div>
                                         </div>
@@ -422,22 +439,22 @@
                                         <div class="row mb-0 mb-lg-3">
                                             <!-- Austria -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Austria</p>
                                             </div>
                                             <!-- Belgium-->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Belgium</p>
                                             </div>
                                             <!-- Finland -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Finland</p>
                                             </div>
                                             <!-- France -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">France</p>
                                             </div>
                                         </div>
@@ -445,22 +462,22 @@
                                         <div class="row mb-0 mb-lg-3">
                                             <!-- Ireland -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Ireland</p>
                                             </div>
                                             <!-- Norway -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Norway</p>
                                             </div>
                                             <!-- Sweden -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">Sweden</p>
                                             </div>
                                             <!-- United Kingdom -->
                                             <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <img src="../assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
                                                 <p class="ps-2 pe-2 text-dark my-auto">United Kingdown</p>
                                             </div>
                                         </div>
@@ -484,7 +501,7 @@
                     <h5 class="mb-4 text-uppercase">Contact Us</h5>
                     <!-- Address -->
                     <p>
-                        Blk 31, Ngee Ann Polytechnic
+                        Blk 31, Ngee Ann Polytechnic 
                         <br>
                         535 Clementi Rd, Singapore 599489
                     </p>
@@ -540,8 +557,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../js/jquery-scrolltofixed-min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/desktop-config.js"></script>
+    <script src="../js/currency-converter.js"></script>
+    <script src="../js/jquery-scrolltofixed-min.js"></script>
 </body>
 </html>

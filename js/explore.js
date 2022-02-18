@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+    // Checks cart
     let userCart;
     if (localStorage.getItem('userCart') != null) {
         userCart = JSON.parse(localStorage.getItem('userCart'));
@@ -8,6 +9,7 @@ $(document).ready(function() {
         userCart = [];
     }
 
+    // Checks RAPID
     $("#rapidATC").on("click", function() {
         let desktopConfiguration = {
             "name": "rapid",
@@ -33,6 +35,7 @@ $(document).ready(function() {
         window.location.assign("cart.html");
     });
 
+    // Checks FORGE15S
     $("#forge15sATC").on("click", function() {
         let laptopConfiguration = {
             "name": "forge15s",

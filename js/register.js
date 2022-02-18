@@ -26,6 +26,7 @@ $(document).ready(function () {
                 let checkAcc = true;
 
                 response.map(account => {
+                    // Checks duplicate accounts
                     if (uEmail === account.email) {
                         errorMsg.show();
                         errorMsg.html("Account already exists!");
@@ -49,20 +50,24 @@ function validateInput(email, pwd, dobStr, errorMsg) {
     let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let emailValid = emailRegex.test(email);
 
+    // If all fields are valid
     if (emailValid && pwd.length >= 8 && getAge(dobStr) - 16 >= 0) {
         return true;
     }
     else {
+        // If email is invalid
         if (!emailValid){
             errorMsg.show();
             errorMsg.html("Email is not in the right format!");
             errorMsg.css("color", "red");
         }
+        // If password is of correct length
         else if (!(pwd.length >= 8)) {
             errorMsg.show();
             errorMsg.html("Password is too short!");
             errorMsg.css("color", "red");
         }
+        // If age is above requirement
         else if (!(getAge(dobStr) - 16 >= 0)) {
             errorMsg.show();
             errorMsg.html("You need to be 16 or above!");
@@ -74,6 +79,7 @@ function validateInput(email, pwd, dobStr, errorMsg) {
     return false;
 }
 
+// Get age based on date
 function getAge(dateString)
 {
     let today = new Date();

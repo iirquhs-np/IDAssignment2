@@ -64,6 +64,7 @@ $(window).on("load", function () {
 
     })
 
+    // Cart Minus Product
     $(document).on('click','.cart-minus-button', function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -85,6 +86,7 @@ $(window).on("load", function () {
         getCartDetails(userCart, content);
     });
 
+    // Cart Plus Product
     $(document).on('click','.cart-plus-button', function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -132,6 +134,7 @@ function getCartDetails(userCart, content) {
                     if (value !== "None") {
                         itemContent += `- ${value}<br>`
                     } else {
+                        // Formatting specs
                         let sectionName = key.replace(/_/g, ' ');
                         sectionName = sectionName.split(" ").map(capitalize).join(" ");
                         if (sectionName.includes("Lan")) {

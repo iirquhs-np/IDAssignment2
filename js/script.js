@@ -68,68 +68,81 @@ $(document).ready(function () {
 
 });
 
+// Currency converter
 function currencyConverter(baseISO4217) {
     $(document).on('click','.country-apac p', function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-
-
         let id = Number($(this).index(".country-apac p"));
         console.log(id);
+        // Australia
         if (id === 0) {
             baseISO4217 = "AUD";
             localStorage.setItem("country", "Australia");
         }
+        // China
         else if (id === 1) {
             baseISO4217 = "CNY";
             localStorage.setItem("country", "China");
         }
+        // Hong Kong
         else if (id === 2) {
             baseISO4217 = "HKD";
             localStorage.setItem("country", "Hong Kong");
         }
+        // India
         else if (id === 3) {
             baseISO4217 = "INR";
             localStorage.setItem("country", "India");
         }
+        // Indonesia
         else if (id === 4) {
             baseISO4217 = "IDR";
             localStorage.setItem("country", "Indonesia");
         }
+        // Japan
         else if (id === 5) {
             baseISO4217 = "JPY";
             localStorage.setItem("country", "Japan");
         }
+        // Malaysia
         else if (id === 6) {
             baseISO4217 = "MYR";
             localStorage.setItem("country", "Malaysia");
         }
+        // New Zealand
         else if (id === 7) {
             baseISO4217 = "NZD";
             localStorage.setItem("country", "New Zealand");
         }
+        // Philippines
         else if (id === 8) {
             baseISO4217 = "PHP";
             localStorage.setItem("country", "Philippines");
         }
+        // Korea
         else if (id === 9) {
             baseISO4217 = "KRW";
             localStorage.setItem("country", "Korea");
         }
+        // Singapore
         else if (id === 10) {
             baseISO4217 = "SGD";
             localStorage.setItem("country", "Singapore");
         }
+        // Taiwan
         else if (id === 11) {
             baseISO4217 = "TWD";
             localStorage.setItem("country", "Taiwan");
         }
+        // Singapore (default)
         else {
             baseISO4217 = "SGD";
             localStorage.setItem("country", "Singapore");
         }
 
+        // base rate
         let rate = 1;
         fetch("https://v6.exchangerate-api.com/v6/e7f0a690189854cf3bf42d0a/latest/SGD")
             .then(response => response.json())

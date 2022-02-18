@@ -4,6 +4,7 @@ const APIKEY = "6208844f34fd62156585842e";
 
 
 $(document).ready(function () {
+    // Cancel button
     $("#contact-cancel").on("click", function (e) {
         e.preventDefault();
         $("#contact-name").val("")
@@ -12,6 +13,7 @@ $(document).ready(function () {
         $("#contact-message").val("");
     })
 
+    // Send button
     $("#contact-send").on("click", function (e) {
         e.preventDefault();
         let cName = $("#contact-name").val();

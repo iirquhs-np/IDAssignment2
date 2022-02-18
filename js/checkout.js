@@ -5,11 +5,13 @@ const promoCode = JSON.parse(localStorage.getItem('promoCode'));
 let userCart = JSON.parse(localStorage.getItem('userCart'));
 
 $(document).ready(function () {
+    // Sets currency
     let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: countryISO4217
     });
 
+    // Delivery options
     $("#deliverySameDay-label").each(function () {
         let currentPrice = $(this).attr("data-price");
         let newPrice = formatter.format(currentPrice * conversionRate);
@@ -29,6 +31,7 @@ $(document).ready(function () {
     else {
         $("#checkout-delivery").html(formatter.format(0));
     }
+    // Check for promo code
     if (promoCode !== null){
         $(".promos").show();
         $("#promo-name").html("Discount (" + promoCode.code + ")");
@@ -42,9 +45,7 @@ $(document).ready(function () {
         $("#checkout-total").html(formatter.format((subtotal + deliveryPrice) * conversionRate));
     }
 
-
-
-
+    // Calculates price based on delivery method
     $(document).on("click", ".delivery-method", function () {
         let deliveryMethodID = $('input[name=deliveryMethod]:checked').attr("id");
         let deliveryPrice = 0;
@@ -69,6 +70,7 @@ $(document).ready(function () {
         }
     });
 
+    // Checks for user acc login
     if (userAccount !== null) {
         ajaxFuncGET().done(function (response) {
             response.map(acc => {
@@ -81,6 +83,7 @@ $(document).ready(function () {
         });
     }
 
+    // Complete order
     $("#complete-order").on("click", function (e) {
         e.preventDefault();
         let errorMsg = $("#errorMessage");

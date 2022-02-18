@@ -1,12 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- META -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- TITLE -->
     <title>COMZONE - Singapore's #1 Customisable High Performance PC Builders</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +21,15 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <!-- NAVIGATION BAR: START -->
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-light py-2">
-            <a href="index.html" class="navbar-brand"><strong>COM</strong>ZONE</a> <!-- BRAND LOGO -->
+            <!-- Company Logo -->
+            <a href="index.html" class="navbar-brand"><strong>COM</strong>ZONE</a>
+            <!-- Mobile Hamburger Menu -->
             <button
                     class="navbar-toggler"
                     type="button"
@@ -36,6 +42,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <!-- Nav Bar Links -->
                 <ul class="navbar-nav ms-auto text-md-center">
                     <li><a href="explore.html" class="nav-link">Shop</a></li>
                     <li><a href="rewards.html" class="nav-link">Rewards</a></li>
@@ -46,11 +53,13 @@
             </div>
         </nav>
     </div>
+    <!-- Nav Bar Bottom Border -->
     <div class="border-bottom"></div>
     <!-- NAVIGATION BAR: END -->
 
     <div class="container my-5">
         <div class="mb-3 row justify-content-center">
+            <!-- Header -->
             <h1 class="mb-3 text-center"><strong>My Account Details</strong></h1>
             <div class="d-flex justify-content-center">
                 <div class="spinner spinner-border" role="status">
@@ -61,7 +70,8 @@
 
         <div class="row justify-content-center">
             <div id="display-details" class="col-lg-8" style="display: none;">
-                <h3 id="display-greeting" class="mb-4"></h3>
+                <!-- Greeting Message -->
+                <h3 id="display-greeting" class="mb-4">Hi</h3>
                 <nav class="mb-2">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
@@ -70,7 +80,8 @@
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-pane fade show active" id="nav-overview" role="tabpanel">
+                        <!-- Account Overview -->
                         <h5 class="mb-1">Account Overview</h5>
                         <table class="table">
                             <tbody>
@@ -94,7 +105,7 @@
                         </table>
                         <button type="button" class="btn btn-danger float-end" id="logoutButton">LOG OUT</button>
                     </div>
-                    <div class="tab-pane fade" id="nav-change-password" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="tab-pane fade" id="nav-change-password" role="tabpanel">
                         <form>
                             <div class="form-group mb-3">
                                 <input type="password" class="form-control" id="old-password" placeholder="Current password" required>
@@ -114,7 +125,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane fade" id="nav-delete-account" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="tab-pane fade" id="nav-delete-account" role="tabpanel">
+                        <!-- Account deletion -->
                         <p>
                             <strong>Are you sure you want to delete your account?</strong> <br>
                             You will lose your data with points and rewards!
@@ -124,7 +136,7 @@
                             Yes, delete my account!
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <form>
                                     <div class="modal-content">
@@ -155,8 +167,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!-- CHOOSE COUNTRY MODAL: START -->
     <div class="modal fade" id="defaultModal" tabindex="-1" aria-hidden="true">
@@ -344,7 +354,7 @@
                     <h5 class="mb-4 text-uppercase">Contact Us</h5>
                     <!-- Address -->
                     <p>
-                        Blk 31, Ngee Ann Polytechnic
+                        Blk 31, Ngee Ann Polytechnic 
                         <br>
                         535 Clementi Rd, Singapore 599489
                     </p>
@@ -394,11 +404,11 @@
     </button>
     <!-- BACK TO TOP BUTTON: END -->
 
-
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/account.js"></script>

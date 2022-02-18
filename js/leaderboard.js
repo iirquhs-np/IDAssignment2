@@ -5,6 +5,7 @@ const APIKEY = "6208844f34fd62156585842e";
 
 $(document).ready(function () {
     ajaxFuncGET().done(function (response) {
+        // Pull user data from RestDB
         let content = "";
 
         let leaderboardArray = [];
@@ -20,6 +21,7 @@ $(document).ready(function () {
 
         leaderboardArray.sort(function (a, b) {return b.points - a.points})
 
+        // Prints each row in leaderboard
         for (let i = 0; i < leaderboardArray.length && i < 10; i++) {
             let id = leaderboardArray[i].id;
             let rankIcon = "";
@@ -41,7 +43,7 @@ $(document).ready(function () {
 
             content = `${content}
                             <tr id='${id}'>
-                                <td class="text-center" style="width: 50px;">${rankIcon}</td>
+                                <td class="text-center align-middle" style="width: 50px;">${rankIcon}</td>
                                 <td class="align-middle">${name}</td>
                                 <td>${points} <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"></td>
                             </tr>`

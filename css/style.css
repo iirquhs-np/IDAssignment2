@@ -1,3 +1,9 @@
+/* Global */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif !important;
 }
@@ -25,7 +31,6 @@ body {
   width: 100%;
   overflow: hidden;
 }
-
 
 header {
     position: relative;
@@ -84,6 +89,7 @@ header {
   }
 }
 
+/* Social Media Bar */
 .social-icon-ul {
   list-style: none;
   display: flex;
@@ -131,10 +137,7 @@ header {
   transform: scale(1.1)
 }
 
-* {
-  box-sizing: border-box;
-}
-
+/* Pro Endorsement */
 .pro-img-block,
 .pro-text-block{
   --s:100px;
@@ -195,7 +198,8 @@ header {
 .white-heading span {
   color: #ffffff;
 }
-/*-----Testimonial-------*/
+
+/* Testimonial */
 
 #testimonial .carousel-inner .item{
 overflow: hidden;
@@ -356,8 +360,8 @@ padding-bottom:50px;
   width: 35px;
   height: 35px;
 }
-/* ------testimonial  close-------*/
 
+/* Mailing List */
 .mailing-list-input {
   width: 80%;
 }
@@ -625,7 +629,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0; 
 }
 
 input[type=number] {

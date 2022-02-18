@@ -7,6 +7,7 @@ $(document).ready(function () {
 
         errorMsg.hide();
 
+        // Checks if user has input email
         if (email === "") {
             errorMsg.html("No email present!");
             errorMsg.css("color", "red");
@@ -16,6 +17,7 @@ $(document).ready(function () {
             let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             let emailValid = emailRegex.test(email);
 
+            // Checks if input email is in database
             if (!emailValid) {
                 errorMsg.html("Value is not an email!");
                 errorMsg.css("color", "red");
