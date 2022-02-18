@@ -16,6 +16,7 @@ $(document).ready(function () {
         window.location.assign("index.html");
     });
 
+
     // SHOW ACCOUNT DETAILS
     ajaxFuncGET().done(function (response) {
         response.map(acc => {

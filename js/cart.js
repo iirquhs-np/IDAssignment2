@@ -1,21 +1,67 @@
+const APIKEY = "6208844f34fd62156585842e";
+
 $(window).on("load", function () {
     let content = "";
     let userCart = JSON.parse(localStorage.getItem('userCart'));
     getCartDetails(userCart, content);
 
     if (localStorage.getItem("promoCode") !== null) {
-        $("#promo-code").val(localStorage.getItem('promoCode'));
+        let promoCode = JSON.parse(localStorage.getItem('promoCode'));
+        $("#promo-code").val(promoCode.code);
     }
 
     $("#check-out").on("click", function() {
         let promoCode = $("#promo-code").val();
-        if (promoCode !== "") {
-            localStorage.setItem("promoCode", promoCode);
+        let errorMsg = $("#errorMessage");
+        let spinner = $("#spinner");
+
+        errorMsg.css("display", "none");
+        spinner.css("display", "block");
+
+        if (promoCode === "") {
+            localStorage.removeItem("promoCode");
+            window.location.assign("checkout.html");
         }
         else {
-            localStorage.removeItem("promoCode");
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://comzone-9f7d.restdb.io/rest/promo-codes",
+                "method": "GET",
+                "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": APIKEY,
+                    "cache-control": "no-cache"
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+                let promoExists = false;
+                response.map(obj => {
+                    let code = obj.code;
+                    if (promoCode === code) {
+                        let discount = obj.discount;
+                        let promoList = {
+                            "code": code,
+                            "discount": discount
+                        };
+                        spinner.css("display", "none");
+                        localStorage.setItem("promoCode", JSON.stringify(promoList));
+                        promoExists = true;
+                        window.location.assign("checkout.html");
+                    }
+                })
+                if (!promoExists) {
+                    errorMsg.html("Promo code does not exist!");
+                    errorMsg.css("color", "red");
+                    errorMsg.css("display", "block");
+                    spinner.css("display", "none");
+                }
+            });
         }
-        window.location.assign("checkout.html");
+
+
+
     })
 
     $(document).on('click','.cart-minus-button', function (e) {
