@@ -1,6 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,11 +22,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <!-- NAVIGATION BAR: START -->
     <div class="container">
         <nav class="navbar navbar-expand-sm navbar-light py-2">
-            <a href="index.html" class="navbar-brand"><strong>COM</strong>ZONE</a> <!-- BRAND LOGO -->
+            <!-- Company Logo -->
+            <a href="index.html" class="navbar-brand"><strong>COM</strong>ZONE</a>
+            <!-- Mobile Hamburger Menu -->
             <button
                     class="navbar-toggler"
                     type="button"
@@ -38,6 +42,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <!-- Nav Bar Links -->
                 <ul class="navbar-nav ms-auto text-md-center">
                     <li><a href="explore.html" class="nav-link">Shop</a></li>
                     <li><a href="rewards.html" class="nav-link">Rewards</a></li>
@@ -48,24 +53,25 @@
             </div>
         </nav>
     </div>
+    <!-- Nav Bar Bottom Border -->
     <div class="border-bottom"></div>
     <!-- NAVIGATION BAR: END -->
 
     <!-- HERO BANNER: START -->
     <div id="hero-banner">
-        <!-- This div is intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <!-- Transparent Black Overlay over the Video for CSS modifications -->
         <div class="overlay"></div>
       
-        <!-- The HTML5 video element that will create the background video on the header -->
+        <!-- Background Video on the Hero Banner -->
         <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
           <source src="assets/vid/index/hero-banner-video.mp4" type="video/mp4">
         </video>
       
-        <!-- The header content -->
+        <!-- Overlay Content -->
         <div class="container h-100">
           <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-              <h2 class="display-3">COMZONE</h2>
+              <h2 class="display-3"><strong>COM</strong>ZONE</h2>
               <p class="lead mb-0">Singapore's #1 Customisable High Performance PC Builders.</p>
             </div>
           </div>
@@ -74,172 +80,222 @@
     <!-- HERO BANNER: END -->
 
     <!-- CATEGORY SECTION: START -->
-    <div class="bg-dark text-white p-5">
+    <div class="bg-dark text-white p-3 p-lg-5">
+        <!-- Header -->
         <h2 class="pt-4 text-center">What are you looking for today?</h2>
         <div class="container my-5">
             <div class="row">
-                <a class="col-sm ms-4 me-4 text-decoration-none text-white" href="explore.html#desktops">
-                    <img class="mx-auto d-block mb-3" height="200px" src="assets/img/explore/aftershock-zeal.png" alt="">
+                <!-- Desktops -->
+                <a class="col-sm me-4 text-decoration-none text-white" href="explore.html#desktops">
+                    <img class="mx-auto d-block mb-3" height="200px" src="assets/img/explore/aftershock-zeal.png" alt="Zeal (Desktop) Image">
+                    <!-- Category Name -->
                     <h5 class="mt-4 text-center text-uppercase"><strong>Desktops</strong></h5>
-                    <p class="text-center mt-3 ps-4 pe-4">
-                        Our premium advanced range of custom pcs feature a full range of ultra-high end component options,
+                    <!-- Category Description -->
+                    <p class="text-center mt-3 ps-lg-4 pe-lg-4 pb-5 pb-lg-0">
+                        Our premium advanced range of custom PCs feature a full range of ultra-high end component options,
                         stunning showcase chassis designs, exotic chassis options and even open loop watercooling options for
-                        you to created your ultimate custom pc masterpiece.
-                        Change the way you view customizing your own pc forever.
+                        you to created your ultimate custom PC masterpiece.
+                        Change the way you view customizing your own PC forever.
                     </p>
                 </a>
-                <a class="col-sm ms-4 me-4 text-decoration-none text-white" href="explore.html#laptops">
-                    <img class="mx-auto d-block mb-3" height="200px" src="assets/img/index/aftershock-forge15s.png" alt="">
+                <!-- Laptops -->
+                <a class="col-sm me-4 text-decoration-none text-white" href="explore.html#laptops">
+                    <img class="mx-auto d-block mb-3" height="200px" src="assets/img/index/aftershock-forge15s.png" alt="Forge 15s (Laptop) Image">
+                    <!-- Category Name -->
                     <h5 class="mt-4 text-center text-uppercase"><strong>Laptops</strong></h5>
-                    <p class="text-center mt-3 ps-4 pe-4">
-                        COMZONE Optimal series gaming notebooks aim to deliver the ultimate combination of features and performance at unbeatable pricepoints.
-                        If you're looking to get the most performance at the best price/performance ratio, our optimal range notebooks deliver in spades.
+                    <!-- Category Description -->
+                    <p class="text-center mt-3 ps-4 pe-4 mb-0">
+                        Our Optimal series gaming notebooks aim to deliver the ultimate mashup of features and performance at unbeatable price points.
+                        If you're looking to get the most performance at the best price/performance ratio, don't miss these as our optimal range notebooks deliver in spades.
                     </p>
                 </a>
             </div>
         </div>
-        <button type="button" class="btn btn-light mx-auto d-block"><a class="text-decoration-none text-dark" href="explore.html">Shop All</a></button>
+        <!-- Shop All Button -->
+        <button type="button" class="btn btn-light mx-auto d-block mb-4 mb-lg-0"><a class="text-decoration-none text-dark" href="explore.html">Shop All</a></button>
     </div>
     <!-- CATEGORY SECTION: END -->
 
     <!-- WHY US SECTION: START -->
+    <!-- Header -->
     <h2 class="mt-5 text-center">Our Promise - Why COMZONE?</h2>
     <div class="container my-5">
         <div class="row">
-          <div class="col-sm ms-4 me-4">
-            <img class="mx-auto d-block mb-3" src="assets/img/index/why-us-support.png" alt="">
-            <h5 class="text-center text-uppercase"><strong>Superior Warranty</strong></h5>
-            <p class="text-center">
-                Our systems are covered by COMZONES's highly renowned aftersales support team. 
-                For desktop PCs, we cover all parts with a 1-for-1 exchange policy. Unlike many other local system builders, 
-                our warranty has a proven track record of excellence.
-            </p>
-          </div>
-          <div class="col-sm ms-4 me-4">
-            <img class="mx-auto d-block mb-3" src="assets/img/index/why-us-performance.png" alt="">
-            <h5 class="text-center text-uppercase"><strong>Performance Optimised</strong></h5>
-            <p class="text-center">
-                COMZONE PC selects and uses only the finest components. 
-                We fine tune systems to get the ideal performance in the most demanding scenarios, and you know what you are getting 
-                when you build a boutique system with us.
-            </p>
-          </div>
-          <div class="col-sm ms-4 me-4">
-            <img class="mx-auto d-block mb-3" style="margin-top: 10px;" height="90" src="assets/img/index/why-us-craftmanship.png" alt="">
-            <h5 class="text-center text-uppercase"><strong>Quality Craftmanship</strong></h5>
-            <p class="text-center">
-                Every system is hand crafted by our passionate team of system builders, to a level of detail and perfection that defines a Boutique PC.
-                We don't just build PCs, we turn dreams into reality.
-            </p>
-          </div>
+            <!-- Superior Warranty -->
+            <div class="col-sm mx-0 mx-lg-4 mb-3 mb-lg-0">
+                <img class="mx-auto d-block mb-3" src="assets/img/index/why-us-support.png" alt="Support Icon">
+                <!-- Subheader -->
+                <h5 class="text-center text-uppercase"><strong>Superior Warranty</strong></h5>
+                <!-- Description -->
+                <p class="text-center px-4 px-lg-0">
+                    Our systems are covered by COMZONES's highly renowned aftersales support team. 
+                    For desktop PCs, we cover all parts with a 1-for-1 exchange policy. Unlike many other local system builders, 
+                    our warranty has a proven track record of excellence.
+                </p>
+            </div>
+            <!-- Performance Optimised -->
+            <div class="col-sm mx-0 mx-lg-4 mb-3 mb-lg-0">
+                <img class="mx-auto d-block mb-3" src="assets/img/index/why-us-performance.png" alt="Performance Icon">
+                <!-- Subheader -->
+                <h5 class="text-center text-uppercase"><strong>Performance Optimised</strong></h5>
+                <!-- Description -->
+                <p class="text-center px-4 px-lg-0">
+                    COMZONE PC selects and uses only the finest components. 
+                    We fine tune systems to get the ideal performance in the most demanding scenarios, and you know what you are getting 
+                    when you build a boutique system with us.
+                </p>
+            </div>
+            <!-- Quality Craftmanship -->
+            <div class="col-sm mx-0 mx-lg-4">
+                <img class="mx-auto d-block mb-3" style="margin-top: 10px;" height="90" src="assets/img/index/why-us-craftmanship.png" alt="Craftmanship Icon">
+                <!-- Subheader -->
+                <h5 class="text-center text-uppercase"><strong>Quality Craftmanship</strong></h5>
+                <!-- Description -->
+                <p class="text-center px-4 px-lg-0">
+                    Every system is hand crafted by our passionate team of system builders, to a level of detail and perfection that defines a Boutique PC.
+                    We don't just build PCs, we turn dreams into reality.
+                </p>
+            </div>
         </div>
     </div>
     <!-- WHY US SECTION: END -->
 
-
     <!-- VIDEO PLAYER SECTION: START -->
     <div class="bg-dark text-white">
-        <h2 class="mt-5 pt-5 text-center">What Happens After Checking Out At COMZONE?</h2>
+        <!-- Header -->
+        <h2 class="mt-5 pt-0 pt-lg-5 text-center">What Happens After Checking Out At COMZONE?</h2>
+        <!-- Description -->
         <h5 class="text-center text-secondary m-4">Ordered &#187; Built &#187; Tested &#187; Packed &#187; Ready To Ship</h5>
-        <div class="embed-responsive embed-responsive-16by9 pb-4">
-            <iframe class="mx-auto d-block mb-5" width="560" height="315" src="https://www.youtube.com/embed/Va18zfmeaD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Embedded Video -->
+        <div class="embed-responsive embed-responsive-16by9 pb-0 pb-lg-4">
+            <iframe class="mx-auto d-block mb-5" width="560" height="315" style="max-width: 80% !important" src="https://www.youtube.com/embed/Va18zfmeaD4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
     <!-- VIDEO PLAYER SECTION: END -->
 
-    <section class="team text-center py-5">
+    <!-- PRO ENDORSEMENT: START -->
+    <div class="team text-center py-0 py-lg-5">
         <div class="container">
-          <div class="header my-5">
-            <h2 class="text-center">We're Built For The Best</h2>
-            <p class="text-muted">Meet The Pros Who Use Our Products</p>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-3">
-              <div class="img-block mb-5">
-                <img src="assets/img/index/pro-endorsement-shuqrixiao.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
-                <div class="content mt-2">
-                  <h5 class="mt-3">Shuqri Xiao</h5>
-                  <p class="text-muted">Professional Apex Legends Player</p>
-                </div>
-              </div>
+            <div class="header my-5">
+                <!-- Header -->
+                <h2 class="text-center">We're Built For The Best</h2>
+                <!-- Description -->
+                <p class="text-muted">Meet The Pros Who Use Our Products</p>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="img-block mb-5">
-                <img src="assets/img/index/pro-endorsement-pokemane.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
-                <div class="content mt-2">
-                  <h5 class="mt-3">Pokemane</h5>
-                  <p class="text-muted">Just Chat Streamer</p>
+            <div class="row">
+                <!-- Pro One -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-5 px-5 px-lg-2">
+                        <img src="assets/img/index/pro-endorsement-shuqrixiao.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="Picture of Shuqri Xiao">
+                        <div class="content mt-2">
+                            <!-- Name -->
+                            <h5 class="mt-3">Shuqri Xiao</h5>
+                            <!-- Title -->
+                            <p class="text-muted">Professional Apex Legends Player</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <!-- Pro Two -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-5 px-5 px-lg-2">
+                        <img src="assets/img/index/pro-endorsement-pokemane.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="Picture of Pokemane">
+                        <div class="content mt-2">
+                            <!-- Name -->
+                            <h5 class="mt-3">Pokemane</h5>
+                            <!-- Title -->
+                            <p class="text-muted">Just Chat Streamer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pro Three -->
+                <div class="col-md-6 col-lg-3 ">
+                    <div class="img-block mb-5 px-5 px-lg-2">
+                        <img src="assets/img/index/pro-endorsement-wardell.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="Piture of WARDELL">
+                        <div class="content mt-2">
+                            <!-- Name -->
+                            <h5 class="mt-3">WARDELL</h5>
+                            <!-- Title -->
+                            <p class="text-muted">Professional Twitch Screamer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pro Four -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="img-block mb-0 mb-lg-5 px-5 px-lg-2">
+                        <img src="assets/img/index/pro-endorsement-shannon.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
+                        <div class="content mt-2">
+                            <!-- Name -->
+                            <h5 class="mt-3">Shannon</h5>
+                            <!-- Title -->
+                            <p class="text-muted">Jett Cosplayer</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 col-lg-3 ">
-                <div class="img-block mb-5">
-                  <img src="assets/img/index/pro-endorsement-wardell.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
-                  <div class="content mt-2">
-                    <h5 class="mt-3">WARDELL</h5>
-                    <p class="text-muted">Professional Twitch Screamer</p>
-                  </div>
-                </div>
-              </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="img-block mb-5">
-                <img src="assets/img/index/pro-endorsement-shannon.jpg" class="img-fluid  img-thumbnail rounded-circle" alt="image1">
-                <div class="content mt-2">
-                  <h5 class="mt-3">Shannon</h5>
-                  <p class="text-muted">Jett Cosplayer</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </div>
+    <!-- PRO ENDORSEMENT: END -->
 
     <!-- TESTIMONIAL: START -->
     <div class="testimonial text-center bg-dark mt-3">
         <div class="container">
+            <!-- Header -->
             <h2 class="text-center text-white mt-5 pt-3">Our Customers Love Us</h2>
-            <img height="25px" style="filter: invert(100%);" class="mb-3" src="assets/img/index/5-star-rating.png">
-            <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
-             
+            <img height="25px" style="filter: invert(100%);" class="mb-3" src="assets/img/index/5-star-rating.png" alt="Five Star Ratings Icon">
+            <div id="testimonial" class="carousel slide testimonial-indicators testimonial-control-button thumb-scroll-x swipe-x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
                 <div class="carousel-inner" role="listbox">
+                    <!-- Testimonial One -->
                     <div class="carousel-item active">
-                        <div class="testimonial4_slide">
-                            <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive"/>
-                            <p>
+                        <div class="testimonial-slide">
+                            <!-- Profile Photo -->
+                            <img src="assets/img/index/testimonial-tom.jpg" class="img-circle img-responsive" alt="Profile Photo of Tom">
+                            <!-- Testimonial Words -->
+                            <p class="testimonial-words">
                                 My girlfriend and I were on the verge of break up because my old PC was too noisy. 
                                 Not anymore! Consider this relationship saved. 
                                 The PC is so silent that she would sometimes forget I'm even home and invite her lover over. He's a pretty cool guy.
                             </p>
-                            <h4>- Tom (CEO, Prohub)</h4>
+                            <!-- Author -->
+                            <h4 class="testimonial-author">- Tom (CEO, Prohub)</h4>
                         </div>
                     </div>
+                    <!-- Testimonial Two -->
                     <div class="carousel-item">
-                        <div class="testimonial4_slide">
-                            <img src="assets/img/index/testimonial-jennifer.jpg" class="img-circle img-responsive" style="object-fit: cover;"/>
-                            <p>
+                        <div class="testimonial-slide">
+                            <!-- Profile Photo -->
+                            <img src="assets/img/index/testimonial-jennifer.jpg" class="img-circle img-responsive" style="object-fit: cover" alt="Profile Photo of Jennifer">
+                            <!-- Testimonial Words -->
+                            <p class="testimonial-words">
                                 This is the best PC company I've ever worked with! 
                                 Friendly customer service, fast delivery and most importantly, monster PCs at affordable prices! 
                                 I will definitely come back for more (hopefully 10 years later because I hope my new PC lasts that long).
                             </p>
-                            <h4>- Jennifer (COO, BestCompany)</h4>
+                            <!-- Author -->
+                            <h4 class="testimonial-author">- Jennifer (COO, BestCompany)</h4>
                         </div>
                     </div>
+                    <!-- Testimonial Three -->
                     <div class="carousel-item">
-                        <div class="testimonial4_slide">
-                            <img src="assets/img/index/testimonial-conan.jpg" class="img-circle img-responsive" style="object-fit: cover;"/>
-                            <p>
+                        <div class="testimonial-slide">
+                            <!-- Profile Photo -->
+                            <img src="assets/img/index/testimonial-conan.jpg" class="img-circle img-responsive" style="object-fit: cover" alt="Profile Photo of Conan">
+                            <!-- Testimonial Words -->
+                            <p class="testimonial-words">
                                 If you're still looking for an efficient PC that's able to suit all your needs, from gaming to video editing to animation, 
                                 look no further! Check out COMZONE, the customer rated number 1 custom PC brand in Southeast Asia!
                             </p>
-                            <h4>- Conan (CFO, GeMA)</h4>
+                            <!-- Author -->
+                            <h4 class="testimonial-author">- Conan (CFO, Gema)</h4>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonial4" data-bs-slide="prev">
+                <!-- Control Button: Previous -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonial" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonial4" data-bs-slide="next">
+                <!-- Control Button: Next -->
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonial" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -250,13 +306,16 @@
 
     <!-- MAILING LIST: START -->
     <div class="d-block mx-auto">
+        <!-- Header -->
         <h2 class="text-center mt-5">Stay Tuned</h2>
-        <p class="text-center">Subscribe to our newsletter to never miss our latest updates, product discounts and more!</p>
+        <!-- Description -->
+        <p class="text-center mx-4 mx-lg-0">Subscribe to our newsletter to never miss our latest updates, product discounts and more!</p>
+        <!-- Subscription Box -->
         <div class="mb-5 mailing-list-input d-block mx-auto">
             <div class="input-group"> 
-                <input type="email" class="form-control" placeholder="Enter email to subscribe"> 
+                <input type="email" class="form-control" placeholder="Enter your email">
                 <span class="input-group-btn"> 
-                    <button class="mailing-btn" type="submit" style="border-radius: 5%;">Subscribe Now</button> 
+                    <button class="mailing-btn" type="submit" style="border-radius: 5%">Subscribe Now</button> 
                 </span>
             </div>
         </div>
@@ -264,7 +323,7 @@
     <!-- MAILING LIST: END -->
 
     <!-- CONTACT FORM: START -->
-	<div class="contact-us d-block mx-auto mb-5">
+	<div class="contact-us d-block px-4 px-lg-0 mx-0 mx-lg-auto mb-5">
         <div class="contact-us-container text-white">
             <div class="screen">
                 <div class="screen-header">
@@ -279,30 +338,39 @@
                         <div class="screen-header-ellipsis"></div>
                     </div>
                 </div>
+                <!-- Header -->
                 <h2 class="text-center mt-3">Contact Us</h2>
+                <!-- Description -->
                 <p class="text-center">We respond within 3 business days.</p>
                 <div class="screen-body">
-                    <div class="screen-body-item left pt-2">
-                        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_fn2gqs3b.json"  background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                    <!-- Mail Out Animation by LottiePlayer -->
+                    <div class="screen-body-item left pt-2 mx-auto d-block mb-0">
+                        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_fn2gqs3b.json"  background="transparent" speed="1" class="mail-animation" loop autoplay></lottie-player>
                     </div>
+                    <!-- Form Fields -->
                     <div class="screen-body-item pt-2">
                         <form id="contact-form">
                             <div class="app-form">
+                                <!-- Name Field -->
                                 <div class="app-form-group">
-                                    <input id="contact--name" class="app-form-control" placeholder="NAME" type="text">
+                                    <input id="contact-name" class="app-form-control" placeholder="NAME" type="text">
                                 </div>
+                                <!-- Email Field -->
                                 <div class="app-form-group">
-                                    <input id="contact--email" class="app-form-control" placeholder="EMAIL" type="email">
+                                    <input id="contact-email" class="app-form-control" placeholder="EMAIL" type="email">
                                 </div>
+                                <!-- Contact Number Field -->
                                 <div class="app-form-group">
-                                    <input id="contact--contactNo" class="app-form-control" placeholder="CONTACT NO" type="number">
+                                    <input id="contact-contact-no" class="app-form-control" placeholder="CONTACT NO" type="number">
                                 </div>
+                                <!-- Message Field -->
                                 <div class="app-form-group message">
-                                    <input id="contact--message" class="app-form-control" placeholder="MESSAGE" type="text">
+                                    <input id="contact-message" class="app-form-control" placeholder="MESSAGE" type="text">
                                 </div>
+                                <!-- Form Buttons -->
                                 <div class="app-form-group buttons">
-                                    <button id="contact--cancel" class="app-form-button" type="reset">CANCEL</button>
-                                    <button id="contact--send" class="app-form-button" type="submit">SEND</button>
+                                    <button id="contact-cancel" class="app-form-button text-uppercase" type="reset">Cancel</button>
+                                    <button id="contact-send" class="app-form-button text-uppercase" type="submit">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -313,8 +381,7 @@
     </div>
     <!-- CONTACT FORM: END -->
 
-
-    <!-- MODAL: START -->
+    <!-- CHOOSE COUNTRY MODAL: START -->
     <div class="modal fade" id="defaultModal" tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -323,153 +390,191 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body"></div>
+                <!-- Close Button -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--MODAL: END -->
-
+    <!-- CHOOSE COUNTRY MODAL: END -->
 
     <!-- FOOTER: START -->
     <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
         <div class="container text-md-start">
             <div class="row text-md-start">
+                <!-- Company Section -->
                 <div class="col-md-3 col-lg-3 col-xl-5 mx-auto mt-3 ms-0">
+                    <!-- Company Logo -->
                     <h5 class="mb-4 font-weight-bold"><strong>COM</strong>ZONE</h5>
-                    <p>
-                        Singapore's #1 Customisable High Performance PC Builders.
-                    </p>
-                    <img class="me-4" height="80px" width="80px" src="assets/img/index/best-badge.png" alt="">
-                    <img height="80px" width="80px" src="assets/img/index/certified-badge.png" alt="">
-                    <div style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
+                    <!-- Company Description -->
+                    <p>Singapore's #1 Customisable High Performance PC Builders.</p>
+                    <!-- Company Awards -->
+                    <img class="me-4" height="80px" width="80px" src="assets/img/index/best-badge.png" alt="Best Badge Icon">
+                    <img height="80px" width="80px" src="assets/img/index/certified-badge.png" alt="Certified Browser Icon">
+                    <!-- Choose Country Button -->
+                    <div class="mb-3" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
                         <img src="assets/img/index/location.png" width="20px" height="20px" style="filter: invert(100%);">
                         <p class="ps-1 text-white my-auto">Singapore</p>
                     </div>
+                    <!-- Choose Country Modal -->
                     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl">
-                          <div class="modal-content px-5">
-                            <h2 class="text-center mt-5 mb-5 text-dark">Select Your Location</h2>
-                            <div class="mx-5">
-                                <h4 class="text-left text-dark" style="padding-left: 20px">Asia Pacific</h4>
-                                <div class="container">
-                                    <div class="row mb-3">
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Australia</p>
+                            <div class="modal-content px-5">
+                                <!-- Header -->
+                                <h2 class="text-center mt-5 mb-5 text-dark">Select Your Location</h2>
+                                <div class="mx-5">
+                                    <!-- Asia Pacific -->
+                                    <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Asia Pacific</h4>
+                                    <div class="container">
+                                        <!-- Row One -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Australia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Australia</p>
+                                            </div>
+                                            <!-- China -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">China</p>
+                                            </div>
+                                            <!-- Hong Kong -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Hong Kong</p>
+                                            </div>
+                                            <!-- India -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">India</p>
+                                            </div>
                                         </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">China</p>
+                                        <!-- Row Two -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Indonesia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Indonesia</p>
+                                            </div>
+                                            <!-- Japan -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Japan</p>
+                                            </div>
+                                            <!-- Malaysia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Malaysia</p>
+                                            </div>
+                                            <!-- New Zealand -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">New Zealand</p>
+                                            </div>
                                         </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Hong Kong</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">India</p>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Indonesia</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Japan</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Malaysia</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">New Zealand</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Philippines</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Korea</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Singapore</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Taiwan</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="m-5">
-                                <h4 class="text-left text-dark" style="padding-left: 20px">Europe</h4>
-                                <div class="container">
-                                    <div class="row mb-3">
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Austria</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Belgium</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Finland</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">France</p>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Ireland</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Norway</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">Sweden</p>
-                                        </div>
-                                        <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
-                                            <img src="assets/img/index/location.png" width="20px" height="20px">
-                                            <p class="ps-2 text-dark my-auto">United Kingdown</p>
+                                        <!-- Row Three -->
+                                        <div class="row">
+                                            <!-- Philippines -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Philippines</p>
+                                            </div>
+                                            <!-- Korea -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Korea</p>
+                                            </div>
+                                            <!-- Singapore -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Singapore</p>
+                                            </div>
+                                            <!-- Taiwan -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Taiwan</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="m-5">
+                                    <!-- Europe -->
+                                    <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Europe</h4>
+                                    <div class="container">
+                                        <!-- Row One -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Austria -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Austria</p>
+                                            </div>
+                                            <!-- Belgium-->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Belgium</p>
+                                            </div>
+                                            <!-- Finland -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Finland</p>
+                                            </div>
+                                            <!-- France -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">France</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Two -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Ireland -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Ireland</p>
+                                            </div>
+                                            <!-- Norway -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Norway</p>
+                                            </div>
+                                            <!-- Sweden -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Sweden</p>
+                                            </div>
+                                            <!-- United Kingdom -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">United Kingdown</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Button -->
+                                <button type="button" class="btn btn-secondary w-25 mt-0 m-5 mx-auto d-block" data-bs-dismiss="modal">Close</button>
                             </div>
-                            <button type="button" class="btn btn-secondary w-25 mt-0 m-5 mx-auto d-block" data-bs-dismiss="modal">Close</button>
-                          </div>
                         </div>
                     </div>
                 </div>
+                <!-- Footer Nav Links -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="mb-4 font-weight-bold">NAVIGATION</h5>
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Navigation</h5>
                     <p><a href="explore.html" class="text-white text-decoration-none">Shop</a></p>
                     <p><a href="rewards.html" class="text-white text-decoration-none">Rewards</a></p>
                     <p><a href="support.html" class="text-white text-decoration-none">Support</a></p>
                 </div>
+                <!-- Contact Us Section -->
                 <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3">
-                    <h5 class="mb-4 ">CONTACT US</h5>
+                    <h5 class="mb-4 text-uppercase">Contact Us</h5>
+                    <!-- Address -->
                     <p>
-                        Blk 31, Ngee Ann Polytechnic <br>
+                        Blk 31, Ngee Ann Polytechnic 
+                        <br>
                         535 Clementi Rd, Singapore 599489
                     </p>
+                    <!-- Email -->
                     <p><a href="mailto:fake_contact@comzone.sg" class="text-white text-decoration-none">Email: fake_contact@comzone.sg</a></p>
+                    <!-- Social Media Bar -->
                     <div class="d-flex">
                         <ul class="social-icon-ul ps-0">
                             <li><span class="social-icon social-facebook"><i class="fab fa-facebook"></i></span></li>
@@ -483,11 +588,13 @@
             </div>
             <hr class="mb-4">
             <div class="row align-items-center">
+                <!-- Copyright and Credits -->
                 <div class="col-md-6">
                     <span>&copy; 2022 COMZONE. All Rights Reserved.<br></span>
-                    <span style="font-size: 12px;">DESIGNED BY <a href="https://www.github.com/gg2shadow" class="text-decoration-none">XIAO YAOJIE</a> &
-                        <a href="https://www.github.com/iirquhs-np" class="text-decoration-none">SHUQRI SHAIFUDDIN</a></span>
+                    <span style="font-size: 12px;">DESIGNED BY <a href="https://www.github.com/gg2shadow" class="text-decoration-none" target="_blank">XIAO YAOJIE</a> &
+                        <a href="https://www.github.com/iirquhs-np" class="text-decoration-none" target="_blank">SHUQRI SHAIFUDDIN</a></span>
                 </div>
+                <!-- Policies -->
                 <div class="col-md-6 mt-3">
                     <div class="text-start text-md-end">
                         <span>
@@ -511,7 +618,6 @@
     </button>
     <!-- BACK TO TOP BUTTON: END -->
 
-
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -519,6 +625,5 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/laptop-config.js"></script>
 </body>
 </html>

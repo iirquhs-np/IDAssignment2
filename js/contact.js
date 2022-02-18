@@ -4,17 +4,17 @@ const APIKEY = "6208844f34fd62156585842e";
 
 
 $(document).ready(function () {
-    $("#contact--cancel").on("click", function (e) {
+    $("#contact-cancel").on("click", function (e) {
         e.preventDefault();
         $("#contact-form")[0].reset();
     })
 
-    $("#contact--send").on("click", function (e) {
+    $("#contact-send").on("click", function (e) {
         e.preventDefault();
-        let cName = $("#contact--name").val();
-        let cEmail = $("#contact--email").val();
-        let cContactNo = $("#contact--contactNo").val();
-        let cMessage = $("#contact--message").val();
+        let cName = $("#contact-name").val();
+        let cEmail = $("#contact-email").val();
+        let cContactNo = $("#contact-contact-no").val();
+        let cMessage = $("#contact-message").val();
 
         let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         let emailValid = emailRegex.test(cEmail);

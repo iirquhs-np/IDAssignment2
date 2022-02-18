@@ -194,11 +194,11 @@ header {
 }
 /*-----Testimonial-------*/
 
-#testimonial4 .carousel-inner .item{
+#testimonial .carousel-inner .item{
 overflow: hidden;
 }
 
-.testimonial4_indicators .carousel-indicators{
+.testimonial-indicators .carousel-indicators{
 left: 0;
 margin: 0;
 width: 100%;
@@ -213,7 +213,7 @@ position: absolute;
 text-align: center;
 white-space: nowrap;
 }
-.testimonial4_indicators .carousel-indicators li{
+.testimonial-indicators .carousel-indicators li{
 padding: 0;
 width: 14px;
 height: 14px;
@@ -226,7 +226,7 @@ background: #ffffff;
 -webkit-border-radius: 100%;
 border-radius: 100%;
 }
-.testimonial4_indicators .carousel-indicators .active{
+.testimonial-indicators .carousel-indicators .active{
 padding: 0;
 width: 14px;
 height: 14px;
@@ -236,16 +236,16 @@ background-color: #9dd3af;
 -webkit-border-radius: 100%;
 border-radius: 100%;
 }
-.testimonial4_indicators .carousel-indicators::-webkit-scrollbar{
+.testimonial-indicators .carousel-indicators::-webkit-scrollbar{
 height: 3px;
 }
-.testimonial4_indicators .carousel-indicators::-webkit-scrollbar-thumb{
+.testimonial-indicators .carousel-indicators::-webkit-scrollbar-thumb{
 background: #eeeeee;
 -webkit-border-radius: 0;
 border-radius: 0;
 }
 
-.testimonial4_control_button .carousel-control{
+.testimonial-control-button .carousel-control{
 top: 175px;
 opacity: 1;
 width: 40px;
@@ -269,24 +269,24 @@ box-shadow: none;
 -webkit-transition: all 0.6s cubic-bezier(0.3,1,0,1);
 transition: all 0.6s cubic-bezier(0.3,1,0,1);
 }
-.testimonial4_control_button .carousel-control.left{
+.testimonial-control-button .carousel-control.left{
 left: 7%;
 top: 50%;
 right: auto;
 }
-.testimonial4_control_button .carousel-control.right{
+.testimonial-control-button .carousel-control.right{
 right: 7%;
 top: 50%;
 left: auto;
 }
-.testimonial4_control_button .carousel-control.left:hover,
-.testimonial4_control_button .carousel-control.right:hover{
+.testimonial-control-button .carousel-control.left:hover,
+.testimonial-control-button .carousel-control.right:hover{
 color: #000;
 background: #fff;
 border: 2px solid #fff;
 }
 
-.testimonial4_header{
+.testimonial_header{
 top: 0;
 left: 0;
 bottom: 0;
@@ -296,7 +296,7 @@ margin: 30px auto;
 text-align: center;
 position: relative;
 }
-.testimonial4_header h4{
+.testimonial_header h4{
 color: #ffffff;
 font-size: 30px;
 font-weight: 600;
@@ -305,7 +305,7 @@ letter-spacing: 1px;
 text-transform: uppercase;
 }
 
-.testimonial4_slide{
+.testimonial-slide{
 top: 0;
 left: 0;
 right: 0;
@@ -316,7 +316,7 @@ padding: 20px;
 position: relative;
 text-align: center;
 }
-.testimonial4_slide img {
+.testimonial-slide img {
   top: 0;
   left: 0;
   right: 0;
@@ -335,13 +335,13 @@ text-align: center;
   -o-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
   -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
 }
-.testimonial4_slide p {
+.testimonial-slide p {
   color: #ffffff;
   font-size: 20px;
   line-height: 1.4;
   margin: 40px 0 20px 0;
 }
-.testimonial4_slide h4 {
+.testimonial-slide h4 {
   color: #ffffff;
   font-size: 22px;
 }
@@ -565,6 +565,44 @@ padding-bottom:50px;
   .screen-body-item {
     padding: 0;
   }
+
+  .testimonial-words, .testimonial-author {
+    font-size: 16px !important;
+  }
+
+  .testimonial-slide {
+    padding: 0;
+  }
+
+  .mail-animation {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .screen-body {
+    padding-top: 0 !important;
+  }
+
+  .contact-us {
+    width: 100% !important;
+  }
+
+  .product-card-btn {
+    font-size: 15px !important;
+  }
+
+  .choose-region {
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+
+  .product-name, .product-usp {
+    text-align: center !important;
+  }
+
+  .product-specs {
+    font-size: 15px;
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -583,4 +621,13 @@ input[type=number] {
   vertical-align: middle;
   line-height: 144px;
   font-size: 120px;
+}
+
+.mail-animation {
+  width: 300px;
+  height: 300px;
+}
+
+.product-card {
+  border: 3px solid rgba(0,0,0,.125) !important;
 }
