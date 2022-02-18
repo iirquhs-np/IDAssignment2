@@ -6,6 +6,7 @@ This is a one-stop platform for users to customise and build their own premium q
 
 Access our Pitch Video [here](https://drive.google.com/file/d/1Uy-Vsuuw-vl0euIBOAufESQBLb_oaRiB/view?usp=sharing).
 Access our Pitch Deck [here](https://docs.google.com/presentation/d/1N-fBp1VIcXU6DMlieUfwCiY-cyPq8MRwYUaaMQdTb2o/edit?usp=sharing).
+Access our Github Page [here](https://github.shuqri.xyz/comzone.sg/).
  
 ## Design Process
 
