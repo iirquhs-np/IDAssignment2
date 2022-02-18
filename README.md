@@ -3,6 +3,9 @@
 COMZONE - Singapore's #1 Customisable High Performance PC Builders.
 
 This is a one-stop platform for users to customise and build their own premium quality PC that is suitable for gaming and all kinds of work, contact COMZONE for post-sales technical support and warranty, as well as participate in seasonal festive events to earn lucrative prizes.
+
+Access our Pitch Video [here](https://drive.google.com/file/d/1Uy-Vsuuw-vl0euIBOAufESQBLb_oaRiB/view?usp=sharing).
+Access our Pitch Deck [here](https://docs.google.com/presentation/d/1N-fBp1VIcXU6DMlieUfwCiY-cyPq8MRwYUaaMQdTb2o/edit?usp=sharing).
  
 ## Design Process
 
