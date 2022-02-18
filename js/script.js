@@ -15,6 +15,10 @@ const country = localStorage.getItem("country");
 // MAIN CODE
 $(document).ready(function () {
 
+    $("#shop-all").on("click", function () {
+        window.location.assign("explore.html");
+    });
+
     // CURRENCY CONVERTER
     let baseISO4217;
     if (countryISO4217 === null) {
