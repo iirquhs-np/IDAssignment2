@@ -1,6 +1,7 @@
 // INITIALISE CONSTANTS
 const dbURL = "https://comzone-9f7d.restdb.io/rest/user-accounts";
 const APIKEY = "6208844f34fd62156585842e";
+const promoCode = JSON.parse(localStorage.getItem('promoCode'));
 let userCart = JSON.parse(localStorage.getItem('userCart'));
 
 $(document).ready(function () {
@@ -8,20 +9,6 @@ $(document).ready(function () {
         style: 'currency',
         currency: countryISO4217
     });
-
-    if (localStorage.getItem("promoCode") !== null) {
-        $("#promo-code").val(localStorage.getItem('promoCode'));
-    }
-    $("#go-to-cart").on("click", function() {
-        let promoCode = $("#promo-code").val();
-        if (promoCode !== "") {
-            localStorage.setItem("promoCode", promoCode);
-        }
-        else {
-            localStorage.removeItem("promoCode");
-        }
-        window.location.assign("checkout.html");
-    })
 
     $("#deliverySameDay-label").each(function () {
         let currentPrice = $(this).attr("data-price");
@@ -42,8 +29,16 @@ $(document).ready(function () {
     else {
         $("#checkout-delivery").html(formatter.format(0));
     }
+    if (promoCode !== null){
+        $(".promos").show();
+        $("#promo-name").html("Discount (" + promoCode.code + ")");
+        $("#checkout-discount").html(formatter.format(-promoCode.discount));
+    }
+    else {
+        $(".promos").hide();
+    }
     $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
-    $("#checkout-total").html(formatter.format((subtotal + deliveryPrice) * conversionRate));
+    $("#checkout-total").html(formatter.format((subtotal + deliveryPrice - promoCode.discount) * conversionRate));
 
 
 
@@ -57,8 +52,16 @@ $(document).ready(function () {
         else {
             $("#checkout-delivery").html(formatter.format(0));
         }
+        if (promoCode !== null){
+            $(".promos").show();
+            $("#promo-name").html("Discount (" + promoCode.code + ")");
+            $("#checkout-discount").html(formatter.format(-promoCode.discount));
+        }
+        else {
+            $(".promos").hide();
+        }
         $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
-        $("#checkout-total").html(formatter.format((subtotal + deliveryPrice) * conversionRate));
+        $("#checkout-total").html(formatter.format((subtotal + deliveryPrice - promoCode.discount) * conversionRate));
     });
 
     if (userAccount !== null) {
@@ -99,7 +102,10 @@ $(document).ready(function () {
             let ccNumber = $("#cc-number").val();
             let ccExpiration = $("#cc-expiration").val();
             let ccCVV = $("#cc-cvv").val();
-            let promoCode = $("#promo-code").val();
+            let code;
+            if (promoCode !== null) {
+                let code = promoCode.code;
+            }
 
             ajaxFuncGET().done(function (response) {
                 let accValid = false;
@@ -114,7 +120,7 @@ $(document).ready(function () {
                                 "address1": address,
                                 "address2:": address2,
                                 "zip": zip,
-                                "promo-code": promoCode,
+                                "promo-code": code,
                                 "delivery-method": deliveryMethod,
                                 "card-name": ccName,
                                 "card-number": ccNumber,
