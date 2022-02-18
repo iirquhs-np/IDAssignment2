@@ -1,84 +1,31 @@
 // GLOBAL JAVASCRIPT CODE
 
-var formatter = new Intl.NumberFormat('en-SG', {
-    style: 'currency',
-    currency: 'SGD'
-});
-
+let formatter;
 // INITIALISE CONSTANTS
 const userAccount = localStorage.getItem("userAccount");
+const countryISO4217 = localStorage.getItem("countryISO4217");
+const conversionRate = localStorage.getItem("conversionRate");
+const country = localStorage.getItem("country");
+
 //const country = localStorage.getItem("country");
 
 // MAIN CODE
 $(document).ready(function () {
 
-    /*// POSSIBLE COUNTRY SELECTOR
-    let countryName = "";
-    let flag = ""
-    let country = "SGP";
-    if (country === "SGP"){
-        flag = `<span class="flag-icon flag-icon-sgp me-1" aria-label="Singapore"></span>`;
+    // CURRENCY CONVERTER
+    let baseISO4217;
+    if (countryISO4217 === null) {
+        baseISO4217 = "SGD";
+        localStorage.setItem("countryISO4217", baseISO4217);
+        localStorage.setItem("conversionRate", 1);
+        localStorage.setItem("country", "Singapore");
+        window.location.reload();
     }
-    else if (country === "MY") {
-        flag = `<span class="flag-icon flag-icon-mys me-1" aria-label="Malaysia"></span>`;
-    }
-    else if (country === "AU") {
-        flag = `<span class="flag-icon flag-icon-aus me-1" aria-label="Australia"></span>`;
-    }
+    currencyConverter(baseISO4217);
+    $("#current-country").html(country);
 
-    let countrySelector =  `<button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="countrySelectorButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                ${flag}
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="countrySelectorButton">
-                                <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-sgp me-1" aria-label="Singapore"></span>Singapore</a></li>
-                                <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-mys me-1" aria-label="Malaysia"></span>Malaysia</a></li>
-                                <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-aus me-1" aria-label="Australia"></span>Australia</a></li>
-                            </ul>`
-    $("#country-dropdown").html(countrySelector);*/
-
-    // Check amt of items in cart.
-    let cartQty = 0;
-    let userCart = JSON.parse(localStorage.getItem('userCart'));
-    if (userCart !== null) {
-        userCart.forEach(cartObj => {
-            cartQty += cartObj[1];
-        });
-    }
-    $("#cart-qty").html("Cart(" + cartQty + ")");
-    // IF USER CLICKS ON ACCOUNT BUTTON
-    $("#account-button").on("click", function () {
-        if (!window.location.pathname.includes("configuration")) {
-            if (userAccount == null) {
-                window.location.assign("login.html");
-            } else {
-
-                window.location.assign("account.html");
-            }
-        } else {
-            if (userAccount == null) {
-                window.location.assign("../login.html");
-            } else {
-                window.location.assign("../account.html");
-            }
-        }
-    });
-
-    // SOCIAL MEDIA FOOTER BUTTONS
-    $(".social-facebook").on("click", function () {
-        window.open("https://www.facebook.com/makeitnp/");
-    });
-    $(".social-google").on("click", function () {
-        window.open("https://goo.gl/maps/oqLvC57pu5BBTZGK7/");
-    });
-    $(".social-linkedin").on("click", function () {
-        window.open("https://www.linkedin.com/school/school-of-infocomm-technology-ngee-ann-polytechnic/");
-    });
-    $(".social-instagram").on("click", function () {
-        window.open("https://www.instagram.com/makeitnp/");
-    });
-    $(".social-twitter").on("click", function () {
-        window.open("https://twitter.com/makeitnp");
-    });
+    cartItemCount();
+    socialButtonsFooter();
 
     // BACK TO TOP BUTTON
     //Get the button
@@ -110,7 +57,98 @@ $(document).ready(function () {
 
 });
 
+function currencyConverter(baseISO4217) {
+    $(document).on('click','.country-apac p', function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+
+
+        let id = Number($(this).index(".country-apac p"));
+        console.log(id);
+        if (id === 0) {
+            baseISO4217 = "AUD";
+            localStorage.setItem("country", "Australia");
+        }
+        else if (id === 1) {
+            baseISO4217 = "CNY";
+            localStorage.setItem("country", "China");
+        }
+        else if (id === 10) {
+            baseISO4217 = "SGD";
+            localStorage.setItem("country", "Singapore");
+        }
+        else {
+            baseISO4217 = "SGD";
+            localStorage.setItem("country", "Singapore");
+        }
+
+        let rate = 1;
+        fetch("https://v6.exchangerate-api.com/v6/e7f0a690189854cf3bf42d0a/latest/SGD")
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem("conversionRate", data.conversion_rates[baseISO4217]);
+                localStorage.setItem("countryISO4217", baseISO4217);
+                formatter = new Intl.NumberFormat('en-SG', {
+                    style: 'currency',
+                    currency: baseISO4217
+                });
+
+                window.location.reload();
+            });
+    });
+}
+
+function cartItemCount() {
+    // Check amt of items in cart.
+    let cartQty = 0;
+    let userCart = JSON.parse(localStorage.getItem('userCart'));
+    if (userCart !== null) {
+        userCart.forEach(cartObj => {
+            cartQty += cartObj[1];
+        });
+    }
+    $("#cart-qty").html("Cart(" + cartQty + ")");
+    // IF USER CLICKS ON ACCOUNT BUTTON
+    $("#account-button").on("click", function () {
+        if (!window.location.pathname.includes("configuration")) {
+            if (userAccount == null) {
+                window.location.assign("login.html");
+            } else {
+
+                window.location.assign("account.html");
+            }
+        } else {
+            if (userAccount == null) {
+                window.location.assign("../login.html");
+            } else {
+                window.location.assign("../account.html");
+            }
+        }
+    });
+}
+
+function socialButtonsFooter () {
+    // SOCIAL MEDIA FOOTER BUTTONS
+    $(".social-facebook").on("click", function () {
+        window.open("https://www.facebook.com/makeitnp/");
+    });
+    $(".social-google").on("click", function () {
+        window.open("https://goo.gl/maps/oqLvC57pu5BBTZGK7/");
+    });
+    $(".social-linkedin").on("click", function () {
+        window.open("https://www.linkedin.com/school/school-of-infocomm-technology-ngee-ann-polytechnic/");
+    });
+    $(".social-instagram").on("click", function () {
+        window.open("https://www.instagram.com/makeitnp/");
+    });
+    $(".social-twitter").on("click", function () {
+        window.open("https://twitter.com/makeitnp");
+    });
+
+}
+
 $('#checkout-process .nav-tab').on('click', function (e) {
     e.preventDefault()
     $(this).tab('show')
-  })
+})
