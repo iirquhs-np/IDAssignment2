@@ -3,7 +3,7 @@
 <head>
     <!-- META -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- TITLE -->
@@ -76,7 +76,7 @@
                         <div class="col-sm-8 mx-0 mx-lg-4 my-auto">
                             <h5 class="text-left text-uppercase rewards-steps"><strong>Earn Points By Spending</strong></h5>
                             <p class="text-left rewards-steps">
-                                You receive 1 Ang Bao <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"> for every $5 you spend. 
+                                You receive 1 Ang Bao <img src="assets/img/rewards/ang-bao.png" width="35" height="35" alt="Ang Bao Icon"> for every $5 you spend. 
                                 The more you spend, the more you earn.
                             </p>
                         </div>
@@ -86,7 +86,7 @@
                         <div class="col-sm-8 mx-0 mx-lg-4 my-auto">
                             <h5 class="text-left text-uppercase rewards-steps"><strong>Trade Ang Baos For Rewards</strong></h5>
                             <p class="text-left rewards-steps">
-                                You can use the Ang Baos <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"> you have to redeem rewards 
+                                You can use the Ang Baos <img src="assets/img/rewards/ang-bao.png" width="35" height="35" alt="Ang Bao Icon"> you have to redeem rewards 
                                 such as discount vouchers, free shipping and more!
                             </p>
                         </div>
@@ -96,7 +96,7 @@
                         <div class="col-sm-8 mx-0 mx-lg-4 my-auto">
                             <h5 class="text-left text-uppercase rewards-steps"><strong>Earn Your Way Up The Leaderboard</strong></h5>
                             <p class="text-left rewards-steps">
-                                You will be ranked based on your Ang Bao <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"> count.
+                                You will be ranked based on your Ang Bao <img src="assets/img/rewards/ang-bao.png" width="35" height="35" alt="Ang Bao Icon"> count.
                                 The top 3 winners walk away with $8,888, $888 and $88 respectively.
                             </p>
                         </div>
@@ -130,9 +130,11 @@
             <div class="col-lg-8">
                 <table class="table" id="leaderboard" style="display: none;">
                     <thead>
-                    <th>Rank</th>
-                    <th>Name</th>
-                    <th>Ang Baos</th>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Ang Baos</th>
+                        </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -141,31 +143,199 @@
     </div>
     <!-- LEADERBOARD: END -->
 
+    <!-- CHOOSE COUNTRY MODAL: START -->
+    <div class="modal fade" id="defaultModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"></div>
+                <!-- Close Button -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CHOOSE COUNTRY MODAL: END -->
+
     <!-- FOOTER: START -->
     <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
         <div class="container text-md-start">
             <div class="row text-md-start">
+                <!-- Company Section -->
                 <div class="col-md-3 col-lg-3 col-xl-5 mx-auto mt-3 ms-0">
+                    <!-- Company Logo -->
                     <h5 class="mb-4 font-weight-bold"><strong>COM</strong>ZONE</h5>
-                    <p>
-                        Singapore's #1 Customisable High Performance PC Builders.
-                    </p>
-                    <img class="me-4" height="80px" width="80px" src="assets/img/index/best-badge.png" alt="">
-                    <img height="80px" width="80px" src="assets/img/index/certified-badge.png" alt="">
+                    <!-- Company Description -->
+                    <p>Singapore's #1 Customisable High Performance PC Builders.</p>
+                    <!-- Company Awards -->
+                    <img class="me-4" height="80" width="80" src="assets/img/index/best-badge.png" alt="Best Badge Icon">
+                    <img height="80" width="80" src="assets/img/index/certified-badge.png" alt="Certified Browser Icon">
+                    <!-- Choose Country Button -->
+                    <div class="mb-3" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" role="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
+                        <img src="assets/img/index/location.png" width="20" height="20" style="filter: invert(100%)" alt="Location Icon">
+                        <p id="current-country" class="ps-1 text-white my-auto"></p>
+                    </div>
+                    <!-- Choose Country Modal -->
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content px-5">
+                                <!-- Header -->
+                                <h2 class="text-center mt-5 mb-5 text-dark">Select Your Location</h2>
+                                <div class="mx-5">
+                                    <!-- Asia Pacific -->
+                                    <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Asia Pacific</h4>
+                                    <div class="container country-apac">
+                                        <!-- Row One -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Australia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Australia</p>
+                                            </div>
+                                            <!-- China -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">China</p>
+                                            </div>
+                                            <!-- Hong Kong -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Hong Kong</p>
+                                            </div>
+                                            <!-- India -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">India</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Two -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Indonesia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Indonesia</p>
+                                            </div>
+                                            <!-- Japan -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Japan</p>
+                                            </div>
+                                            <!-- Malaysia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Malaysia</p>
+                                            </div>
+                                            <!-- New Zealand -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">New Zealand</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Three -->
+                                        <div class="row">
+                                            <!-- Philippines -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Philippines</p>
+                                            </div>
+                                            <!-- Korea -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Korea</p>
+                                            </div>
+                                            <!-- Singapore -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Singapore</p>
+                                            </div>
+                                            <!-- Taiwan -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Taiwan</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-5">
+                                    <!-- Europe -->
+                                    <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Europe</h4>
+                                    <div class="container country-europe">
+                                        <!-- Row One -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Austria -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Austria</p>
+                                            </div>
+                                            <!-- Belgium-->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Belgium</p>
+                                            </div>
+                                            <!-- Finland -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Finland</p>
+                                            </div>
+                                            <!-- France -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">France</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Two -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Ireland -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Ireland</p>
+                                            </div>
+                                            <!-- Norway -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Norway</p>
+                                            </div>
+                                            <!-- Sweden -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Sweden</p>
+                                            </div>
+                                            <!-- United Kingdom -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="assets/img/index/location.png" width="20" height="20" class="ms-4 ms-lg-0" alt="Location Icon">
+                                                <p class="ps-2 pe-2 text-dark my-auto">United Kingdown</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Button -->
+                                <button type="button" class="btn btn-secondary w-25 mt-0 m-5 mx-auto d-block" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Footer Nav Links -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="mb-4 font-weight-bold">NAVIGATION</h5>
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Navigation</h5>
                     <p><a href="explore.html" class="text-white text-decoration-none">Shop</a></p>
                     <p><a href="rewards.html" class="text-white text-decoration-none">Rewards</a></p>
                     <p><a href="support.html" class="text-white text-decoration-none">Support</a></p>
                 </div>
+                <!-- Contact Us Section -->
                 <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3">
-                    <h5 class="mb-4 ">CONTACT US</h5>
+                    <h5 class="mb-4 text-uppercase">Contact Us</h5>
+                    <!-- Address -->
                     <p>
-                        Blk 31, Ngee Ann Polytechnic <br>
+                        Blk 31, Ngee Ann Polytechnic 
+                        <br>
                         535 Clementi Rd, Singapore 599489
                     </p>
+                    <!-- Email -->
                     <p><a href="mailto:fake_contact@comzone.sg" class="text-white text-decoration-none">Email: fake_contact@comzone.sg</a></p>
+                    <!-- Social Media Bar -->
                     <div class="d-flex">
                         <ul class="social-icon-ul ps-0">
                             <li><span class="social-icon social-facebook"><i class="fab fa-facebook"></i></span></li>
@@ -179,17 +349,19 @@
             </div>
             <hr class="mb-4">
             <div class="row align-items-center">
+                <!-- Copyright and Credits -->
                 <div class="col-md-6">
                     <span>&copy; 2022 COMZONE. All Rights Reserved.<br></span>
-                    <span style="font-size: 12px;">DESIGNED BY <a href="https://www.github.com/gg2shadow" class="text-decoration-none">XIAO YAOJIE</a> &
-                            <a href="https://www.github.com/iirquhs-np" class="text-decoration-none">SHUQRI SHAIFUDDIN</a></span>
+                    <span style="font-size: 12px;">DESIGNED BY <a href="https://www.github.com/gg2shadow" class="text-decoration-none" target="_blank">XIAO YAOJIE</a> &
+                        <a href="https://www.github.com/iirquhs-np" class="text-decoration-none" target="_blank">SHUQRI SHAIFUDDIN</a></span>
                 </div>
+                <!-- Policies -->
                 <div class="col-md-6 mt-3">
                     <div class="text-start text-md-end">
-                            <span>
-                                <a href="termsofservice.html" class="text-white text-decoration-none">Terms of Service</a> |
-                                <a href="datanotice.html" class="text-white text-decoration-none">Data Protection Notice</a>
-                            </span>
+                        <span>
+                            <a href="termsofservice.html" class="text-white text-decoration-none">Terms of Service</a> |
+                            <a href="datanotice.html" class="text-white text-decoration-none">Data Protection Notice</a>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -207,14 +379,15 @@
     </button>
     <!-- BACK TO TOP BUTTON: END -->
 
-
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/leaderboard.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="js/newsletter.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
+

@@ -18,6 +18,7 @@ We adopted a five-step website development process designed by our very own COMZ
 5. Improve: We identified errors, fixed them and retest. We also jotted down a list of features that can be implemented in the future.
 
 ## Features
+
 Following is a list of all existing features and features left to implement that are available on both laptop and mobile.
 
 ### Existing Features
@@ -31,7 +32,7 @@ Following is a list of all existing features and features left to implement that
 - Quick Add To Chart - Allows users to add pre-specified PC builds to their carts.
 - PC Customisation - Allows users to customise their PC parts, by having them click on the different options for each field in a PC Customisation page.
 - Festive Events (CNY) & Leaderboards - Ranks users based on the membership points they obtained throughout the event period. Top 3 gets cash prizes.
-- Membership System - Enables users to create and log in to accounts to use the membership points systems and check their order history. Users can also change their passwords or delete their accounts.
+- Membership System - Enables users to create and log in to accounts to use the membership points systems. Users can also change their passwords or delete their accounts.
 - Membership Points - Enables users to earn membership points with every dollar spent on the website and use these points to redeem for rewards.
 - FAQ page - Enables users to quickly find answers to common questions.
 - Shopping Cart - Enables users to add and/or remove products to their shopping carts. There is also a live reflection of the number of items in their carts as well as the live tabulation of the total order price.
@@ -44,6 +45,7 @@ Following is a list of all existing features and features left to implement that
 - Wish List - Allows users to add products they wish to purchase in the future into the list. They can then retrieve this list later on when they log back into their account.
 - Live Chat - Enables users to quick support through a live chat system with our sales agents.
 - Order Tracking - Enables users to track the progress of their orders. Such a progress includes stages such as order processing, PC assembling, in shipping etc.
+- Order History - Enables users to see what they bought in the past.
 
 ## Technologies Used
 
@@ -52,7 +54,7 @@ Following is a list of all existing features and features left to implement that
 - CSS
     - The project uses **CSS** to style the looks of the website on both laptop and mobile.
 - [JS](https://www.javascript.com)
-    - The project uses **JS** to add interactivity to the webste.
+    - The project uses **JS** to add interactivity to the website.
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Data Protection Notice Generator](https://apps.pdpc.gov.sg/dp-notice-generator)
@@ -70,11 +72,45 @@ Following is a list of all existing features and features left to implement that
 
 ## Testing
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+1. Newsletter Subscription: 
+    1. Go to the Newsletter Subscription section on index.html.
+    2. Try to submit the form with an empty email address and verify that an error message about the required fields appears.
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears.
+    4. Try to submit the form with a valid email address and verify that it goes through into the database.
+
+2. Contact Form:
+    1. Go to the Contact Form section on index.html.
+    2. Try to submit the empty form and verify that an error message about the required fields appears.
+    3. Try to submit the form with an invalid name (contains numbers) and verify that a relevant error message appears.
+    4. Try to submit the form with an invalid email address and verify that a relevant error message appears.
+    5. Try to submit the form with an empty email address and verify that an error message about the required fields appears.
+    6. Try to submit the form with an invalid contact number and verify that a relevant error message appears.
+    7. Try to submit the form with an empty contact number and verify that an error message about the required fields appears.
+    8. Try to submit the form with an empty message and verify that an error message about the required fields appears.
+    9. Try to submit the form with all inputs valid and verify that a success message appears.
+    10. Go to the Contact Form section on support.html.
+    11. Repeat steps 2 to 9. 
+
+3. Currency Exchanger:
+    1. Go to the different pages with prices labelled.
+    2. Note the prices reflected in SGD (by default).
+    3. Go to the footer and change the location to another country (such as China).
+    4. Go back to the different pages with prices labelled.
+    5. Check if the prices reflected are now multiplied by the conversion rate.
+
+4. Price Calculation:
+    1. Go to explore.html.
+    2. Try customising a random PC (such as Rapid).
+    3. Play around with the different specs options and check if the total price reflected is correct.
+    4. Go to cart.html.
+    5. Add or subtract the items in the cart and check if the total price reflected is correct.
+    6. Go to checkout.html.
+    7. Play around with the different shipping options and check if the total price reflected is correct.
+    8. Enter a valid promo code and check if the total price reflected is correct.
+
+5. Cross-platform Optimisation:
+    1. Go to laptop view and verify that all included content are visible, as intended and working.
+    2. Go to iPhone XR view and verify that all included content are visible, as intended and working. Note that when the website is switched to mobile view, features might be displayed differently such that it makes more sense for a smaller screen. This includes changing row-viewed content into column-viewed content using flex boxes etc.
 
 ## Credits
 
