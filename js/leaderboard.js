@@ -43,7 +43,8 @@ $(document).ready(function () {
                             <tr id='${id}'>
                                 <td class="text-center" style="width: 50px;">${rankIcon}</td>
                                 <td class="align-middle">${name}</td>
-                                <td>${points} <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"></td>`
+                                <td>${points} <img src="assets/img/rewards/ang-bao.png" width="35px" height="35px"></td>
+                            </tr>`
         }
 
         $("#leaderboard tbody").html(content);

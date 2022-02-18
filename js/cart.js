@@ -1,43 +1,85 @@
-$(document).ready(function () {
+
+
+$(window).on("load", function () {
     let content = "";
     let userCart = JSON.parse(localStorage.getItem('userCart'));
-    if (userCart !== null) {
+    getCartDetails(userCart, content);
+
+    $(document).on('click','.cart-minus-button', function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        userCart = JSON.parse(localStorage.getItem('userCart'));
+        let id = Number($(this).index(".cart-minus-button"));
+        let qty = userCart[id][1];
+
+        if (qty === 1) {
+            userCart.splice(id, 1);
+            console.log(userCart);
+        }
+        else {
+            let price = userCart[id][2] / qty;
+            userCart[id][1] -= 1;
+            userCart[id][2] -= price;
+        }
+        localStorage.setItem("userCart", JSON.stringify(userCart));
+        getCartDetails(userCart, content);
+    });
+
+    $(document).on('click','.cart-plus-button', function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        userCart = JSON.parse(localStorage.getItem('userCart'));
+        let id = Number($(this).index(".cart-plus-button"));
+        let qty = userCart[id][1];
+
+        let itemPrice = userCart[id][2] / qty;
+        userCart[id][1] += 1; // Add 1 quantity
+        userCart[id][2] += itemPrice; // Add "1 item" price to total
+
+        localStorage.setItem("userCart", JSON.stringify(userCart));
+        getCartDetails(userCart, content);
+    });
+
+
+
+});
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function getCartDetails(userCart, content) {
+    if (userCart === null || userCart.length === 0) {
+        $("#cart-table").hide();
+        $("#cart-empty-text").show();
+    } else {
+        $("#cart-table").show();
         let i = 1
         userCart.forEach(cartObj => {
             let item = cartObj[0];
             let quantity = cartObj[1];
             let price = formatter.format(cartObj[2]);
-            console.log(item.name);
             let itemContent = `<strong>${item.name.toUpperCase()}</strong><br>`
             let firstVal = true;
             for (const [key, value] of Object.entries(item)) {
-                if (firstVal){
+                if (firstVal) {
                     firstVal = false
-                }
-                else{
-                    if (value !== "None")
-                    {
+                } else {
+                    if (value !== "None") {
                         itemContent += `- ${value}<br>`
-                    }
-                    else {
+                    } else {
                         let sectionName = key.replace(/_/g, ' ');
                         sectionName = sectionName.split(" ").map(capitalize).join(" ");
-                        console.log(sectionName);
                         if (sectionName.includes("Lan")) {
                             sectionName = sectionName.replace("Lan", "LAN");
-                            console.log(sectionName);
-                        }
-                        else if (sectionName.includes("Ssd")) {
+                        } else if (sectionName.includes("Ssd")) {
                             sectionName = sectionName.replace("Ssd", "SSD");
-                            console.log(sectionName);
-                        }
-                        else if (sectionName.includes("Hdd")) {
+                        } else if (sectionName.includes("Hdd")) {
                             sectionName = sectionName.replace("Hdd", "HDD");
-                            console.log(sectionName);
-                        }
-                        else if (sectionName.includes("Os")) {
+                        } else if (sectionName.includes("Os")) {
                             sectionName = sectionName.replace("Os", "OS");
-                            console.log(sectionName);
 
                         }
                         itemContent += `- No ${sectionName}<br>`
@@ -45,14 +87,12 @@ $(document).ready(function () {
                 }
             }
             for (let i = 1; i < item.length; i++) {
-
-                console.log(item[i]);
                 itemContent += `- ${item[i]}<br>`
             }
             content = `${content}
                             <tr id='cart-${i}'>
                                 <td>${itemContent}</td>
-                                <td>${quantity}</td>
+                                <td><i id="cart-minus-${i}" class="cart-minus-button fas fa-minus-circle me-2"></i>${quantity}<i id="cart-plus-${i}" class="cart-plus-button fas fa-plus-circle ms-2"></i></td>
                                 <td>${price}</td>`
 
             i++;
@@ -61,18 +101,12 @@ $(document).ready(function () {
 
         let value = 0;
         for (let i = 1; i < $("tr").length; i++) {
-            let cartVal = $("#cart-" + i + " td")[2].outerText;
-            cartVal = Number(cartVal.replace(/[^0-9.-]+/g,""));
+            let cartVal = $("#cart-" + i + " td")[2].textContent;
+            cartVal = Number(cartVal.replace(/[^0-9.-]+/g, ""));
             value += cartVal;
         }
         $("#cart-subtotal").html(formatter.format(value));
         $("#cart-total").html(formatter.format(value));
     }
-    else {
-        $("#cart-table").hide();
-    }
-});
 
-function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
 }
