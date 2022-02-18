@@ -415,7 +415,7 @@
                     <!-- Choose Country Button -->
                     <div class="mb-3" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
                         <img src="assets/img/index/location.png" width="20px" height="20px" style="filter: invert(100%);">
-                        <p class="ps-1 text-white my-auto">Singapore</p>
+                        <p id="current-country" class="ps-1 text-white my-auto"></p>
                     </div>
                     <!-- Choose Country Modal -->
                     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -426,7 +426,7 @@
                                 <div class="mx-5">
                                     <!-- Asia Pacific -->
                                     <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Asia Pacific</h4>
-                                    <div class="container">
+                                    <div class="container country-apac">
                                         <!-- Row One -->
                                         <div class="row mb-0 mb-lg-3">
                                             <!-- Australia -->
@@ -501,7 +501,7 @@
                                 <div class="m-5">
                                     <!-- Europe -->
                                     <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Europe</h4>
-                                    <div class="container">
+                                    <div class="container country-europe">
                                         <!-- Row One -->
                                         <div class="row mb-0 mb-lg-3">
                                             <!-- Austria -->

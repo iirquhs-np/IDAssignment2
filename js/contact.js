@@ -23,10 +23,10 @@ $(document).ready(function () {
             console.log("fields not null");
 
             let data = {
-                name: cName,
-                email: cEmail,
-                contactNo: cContactNo,
-                message: cMessage
+                "name": cName,
+                "email": cEmail,
+                "contact-no": cContactNo,
+                "message": cMessage
             };
 
             ajaxFuncPOST(data).done(function (response) {

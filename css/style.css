@@ -2,6 +2,9 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
+.country-apac, .country-europe p {
+  cursor: pointer;
+}
 
 #account-button > img {
   cursor: pointer;
