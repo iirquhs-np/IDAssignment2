@@ -1,6 +1,6 @@
 // GLOBAL JAVASCRIPT CODE
 
-var formatter = new Intl.NumberFormat('en-SG', {
+var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: "SGD"
 });

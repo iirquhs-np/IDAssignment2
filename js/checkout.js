@@ -4,7 +4,7 @@ const APIKEY = "6208844f34fd62156585842e";
 let userCart = JSON.parse(localStorage.getItem('userCart'));
 
 $(document).ready(function () {
-    let formatter = new Intl.NumberFormat('en-SG', {
+    let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: countryISO4217
     });

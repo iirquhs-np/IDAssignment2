@@ -3,7 +3,7 @@ const mainDB = "https://comzone-9f7d.restdb.io/rest/desktop-parts";
 const APIKEY = "6208844f34fd62156585842e";
 
 $(document).ready(function () {
-    let formatter = new Intl.NumberFormat('en-SG', {
+    let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: countryISO4217
     });

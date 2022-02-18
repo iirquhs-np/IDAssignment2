@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let formatter = new Intl.NumberFormat('en-SG', {
+    let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: countryISO4217
     });
