@@ -33,12 +33,15 @@ $(document).ready(function () {
         $(".promos").show();
         $("#promo-name").html("Discount (" + promoCode.code + ")");
         $("#checkout-discount").html(formatter.format(-promoCode.discount));
+        $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
+        $("#checkout-total").html(formatter.format((subtotal + deliveryPrice - promoCode.discount) * conversionRate));
     }
     else {
         $(".promos").hide();
+        $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
+        $("#checkout-total").html(formatter.format((subtotal + deliveryPrice) * conversionRate));
     }
-    $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
-    $("#checkout-total").html(formatter.format((subtotal + deliveryPrice - promoCode.discount) * conversionRate));
+
 
 
 
@@ -56,12 +59,14 @@ $(document).ready(function () {
             $(".promos").show();
             $("#promo-name").html("Discount (" + promoCode.code + ")");
             $("#checkout-discount").html(formatter.format(-promoCode.discount));
+            $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
+            $("#checkout-total").html(formatter.format((subtotal + deliveryPrice - promoCode.discount) * conversionRate));
         }
         else {
             $(".promos").hide();
+            $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
+            $("#checkout-total").html(formatter.format((subtotal + deliveryPrice) * conversionRate));
         }
-        $("#checkout-subtotal").html(formatter.format(subtotal * conversionRate));
-        $("#checkout-total").html(formatter.format((subtotal + deliveryPrice - promoCode.discount) * conversionRate));
     });
 
     if (userAccount !== null) {
