@@ -119,6 +119,39 @@ $(document).ready(function () {
                         accValid = true;
                         if (firstName !== "" && lastName !== "" && address !== "" && zip !== "" &&
                             ccName !== "" && ccNumber !== "" && ccExpiration !== "" && ccCVV !== "") {
+
+                            let cartTotal = 0;
+                            userCart.forEach(item => {
+                                cartTotal += item[2];
+                            })
+
+                            let currentPoints = Number(acc.points);
+                            let discount = 0;
+                            if (promoCode !== null) {
+                                discount = promoCode.discount;
+                            }
+                            let cartPoints = Math.floor((cartTotal - discount) / 5);
+                            let newPoints = currentPoints + cartPoints
+
+                            let updateUser = {"points": newPoints};
+                            let ajaxSettings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": dbURL + "/" + acc._id,
+                                "method": "PUT",
+                                "headers": {
+                                    "content-type": "application/json",
+                                    "x-apikey": APIKEY,
+                                    "cache-control": "no-cache"
+                                },
+                                "processData": false,
+                                "data": JSON.stringify(updateUser)
+                            }
+
+                            $.ajax(ajaxSettings).done(function (response) {
+                                console.log(response);
+                            });
+
                             let data = {
                                 "accID": acc._id,
                                 "email": email,
@@ -152,7 +185,11 @@ $(document).ready(function () {
                                 localStorage.removeItem("userCart");
                                 localStorage.removeItem("promoCode");
                                 errorMsg.hide();
-                                window.location.assign("account.html");
+                                spinner.hide();
+                                $("#checkoutModal").modal("show");
+                                $("#checkoutModal-btn").on("click", function () {
+                                    window.location.assign("index.html");
+                                });
                             });
                         } else {
                             errorMsg.html("All fields must be provided.");
