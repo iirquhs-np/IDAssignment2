@@ -6,7 +6,10 @@ const APIKEY = "6208844f34fd62156585842e";
 $(document).ready(function () {
     $("#contact-cancel").on("click", function (e) {
         e.preventDefault();
-        $("#contact-form")[0].reset();
+        $("#contact-name").val("")
+        $("#contact-email").val("");
+        $("#contact-contact-no").val("");
+        $("#contact-message").val("");
     })
 
     $("#contact-send").on("click", function (e) {
@@ -20,7 +23,6 @@ $(document).ready(function () {
         let emailValid = emailRegex.test(cEmail);
 
         if (cName !== null && emailValid && $.isNumeric(cContactNo) && cMessage !== null) {
-            console.log("fields not null");
 
             let data = {
                 "name": cName,
@@ -29,15 +31,25 @@ $(document).ready(function () {
                 "message": cMessage
             };
 
+            console.log(data);
+
             ajaxFuncPOST(data).done(function (response) {
                 console.log("completed");
                 console.log(response);
-                $("#contact-form")[0].reset();
+                $(".modal-title").html("Success!");
+                $(".modal-body").html("Thank you for your response!");
+                $(".modal-body").css("color", "green");
+                $("#defaultModal").modal("show");
+                $("#contact-name").val("")
+                $("#contact-email").val("");
+                $("#contact-contact-no").val("");
+                $("#contact-message").val("");
             });
         }
         else {
             $(".modal-title").html("Error!");
             $(".modal-body").html("Fields are not valid!");
+            $(".modal-body").css("color", "red");
             $("#defaultModal").modal("show");
         }
 

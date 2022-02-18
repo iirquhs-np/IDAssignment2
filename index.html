@@ -313,12 +313,12 @@
         <!-- Subscription Box -->
         <div class="mb-5 mailing-list-input d-block mx-auto">
             <div class="input-group">
-                <input type="email" class="form-control" placeholder="Enter your email">
-                <span class="input-group-btn"> 
-                    <button class="mailing-btn" type="submit" style="border-radius: 5%">Subscribe Now</button> 
+                <input id="newsletter-field" type="email" class="form-control" placeholder="Enter your email">
+                <span class="input-group-btn">
+                    <button id="newsletter-submit" class="mailing-btn" type="submit" style="border-radius: 5%">Subscribe Now</button>
                 </span>
             </div>
-            <div class="mt-2" id="newsletter-error"></div>
+            <div class="mt-2 text-center" id="newsletter-error"></div>
 
         </div>
     </div>
@@ -372,7 +372,7 @@
                                 <!-- Form Buttons -->
                                 <div class="app-form-group buttons">
                                     <button id="contact-cancel" class="app-form-button text-uppercase" type="reset">Cancel</button>
-                                    <button id="contact-send" class="app-form-button text-uppercase" type="submit">Send</button>
+                                    <button type="submit" class="app-form-button text-uppercase" id="contact-send">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -626,5 +626,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/newsletter.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
