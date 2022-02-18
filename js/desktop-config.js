@@ -7,9 +7,13 @@ $(document).ready(function () {
         style: 'currency',
         currency: countryISO4217
     });
-    $('#cart').scrollToFixed({
-        marginTop: 50,
-    });
+
+    const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+    if (!isMobile) {
+        $('#cart').scrollToFixed({
+            marginTop: 50,
+        });
+    }
 
     let userCart;
     if (localStorage.getItem('userCart') != null) {
