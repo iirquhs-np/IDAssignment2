@@ -1,9 +1,19 @@
-
-
 $(window).on("load", function () {
     let content = "";
     let userCart = JSON.parse(localStorage.getItem('userCart'));
     getCartDetails(userCart, content);
+
+    if (localStorage.getItem("promoCode") !== null) {
+        $("#promo-code").value = localStorage.getItem('promoCode');
+    }
+
+    $("#check-out").on("click", function() {
+        let promoCode = $("#promo-code").val();
+        if (promoCode !== "") {
+            localStorage.setItem("promoCode", promoCode);
+        }
+        window.location.assign("checkout.html");
+    })
 
     $(document).on('click','.cart-minus-button', function (e) {
         e.stopPropagation();
@@ -43,7 +53,6 @@ $(window).on("load", function () {
     });
 
 
-
 });
 
 function capitalize(str) {
@@ -51,6 +60,10 @@ function capitalize(str) {
 }
 
 function getCartDetails(userCart, content) {
+    let formatter = new Intl.NumberFormat('en-SG', {
+        style: 'currency',
+        currency: countryISO4217
+    });
     if (userCart === null || userCart.length === 0) {
         $("#cart-table").hide();
         $("#cart-empty-text").show();
@@ -60,7 +73,7 @@ function getCartDetails(userCart, content) {
         userCart.forEach(cartObj => {
             let item = cartObj[0];
             let quantity = cartObj[1];
-            let price = formatter.format(cartObj[2]);
+            let price = formatter.format(cartObj[2] * conversionRate);
             let itemContent = `<strong>${item.name.toUpperCase()}</strong><br>`
             let firstVal = true;
             for (const [key, value] of Object.entries(item)) {
@@ -106,7 +119,7 @@ function getCartDetails(userCart, content) {
             value += cartVal;
         }
         $("#cart-subtotal").html(formatter.format(value));
-        $("#cart-total").html(formatter.format(value));
+        $("#cart-total").html(formatter.format(value ));
     }
 
 }

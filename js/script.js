@@ -1,6 +1,9 @@
 // GLOBAL JAVASCRIPT CODE
 
-let formatter;
+var formatter = new Intl.NumberFormat('en-SG', {
+    style: 'currency',
+    currency: "SGD"
+});
 // INITIALISE CONSTANTS
 const userAccount = localStorage.getItem("userAccount");
 const countryISO4217 = localStorage.getItem("countryISO4217");
@@ -19,6 +22,10 @@ $(document).ready(function () {
         localStorage.setItem("countryISO4217", baseISO4217);
         localStorage.setItem("conversionRate", 1);
         localStorage.setItem("country", "Singapore");
+        formatter = new Intl.NumberFormat('en-SG', {
+            style: 'currency',
+            currency: baseISO4217
+        });
         window.location.reload();
     }
     currencyConverter(baseISO4217);
@@ -77,6 +84,10 @@ function currencyConverter(baseISO4217) {
         else if (id === 10) {
             baseISO4217 = "SGD";
             localStorage.setItem("country", "Singapore");
+        }
+        else if (id === 6) {
+            baseISO4217 = "MYR";
+            localStorage.setItem("country", "Malaysia");
         }
         else {
             baseISO4217 = "SGD";

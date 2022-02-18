@@ -43,6 +43,7 @@
                     <li><a class="nav-link" href="../explore.html">Shop</a></li>
                     <li><a class="nav-link" href="../rewards.html">Rewards</a></li>
                     <li><a class="nav-link" href="#">Support</a></li>
+                    <li><a href="cart.html" class="nav-link" id="cart-qty">Cart(0)</a></li>
                     <li class="nav-link" id="account-button"><img alt="" src="../assets/img/index/user-interface.png"
                                                                   style="height: 20px;"></li>
                 </ul>
@@ -291,32 +292,181 @@
     <!-- CONFIGURATION: END -->
 
     <!-- FOOTER: START -->
-    <footer id="footer" class="bg-dark text-white pt-5 pb-4 mt-auto">
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
         <div class="container text-md-start">
             <div class="row text-md-start">
+                <!-- Company Section -->
                 <div class="col-md-3 col-lg-3 col-xl-5 mx-auto mt-3 ms-0">
+                    <!-- Company Logo -->
                     <h5 class="mb-4 font-weight-bold"><strong>COM</strong>ZONE</h5>
-                    <p>
-                        Singapore's #1 Customisable High Performance PC Builders.
-                    </p>
-                    <img alt="" class="me-4" height="80px" src="../assets/img/index/best-badge.png" width="80px">
-                    <img alt="" height="80px" src="../assets/img/index/certified-badge.png" width="80px">
+                    <!-- Company Description -->
+                    <p>Singapore's #1 Customisable High Performance PC Builders.</p>
+                    <!-- Company Awards -->
+                    <img class="me-4" height="80px" width="80px" src="../assets/img/index/best-badge.png" alt="Best Badge Icon">
+                    <img height="80px" width="80px" src="../assets/img/index/certified-badge.png" alt="Certified Browser Icon">
+                    <!-- Choose Country Button -->
+                    <div class="mb-3" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
+                        <img src="../assets/img/index/location.png" width="20px" height="20px" style="filter: invert(100%);">
+                        <p id="current-country" class="ps-1 text-white my-auto"></p>
+                    </div>
+                    <!-- Choose Country Modal -->
+                    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content px-5">
+                                <!-- Header -->
+                                <h2 class="text-center mt-5 mb-5 text-dark">Select Your Location</h2>
+                                <div class="mx-5">
+                                    <!-- Asia Pacific -->
+                                    <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Asia Pacific</h4>
+                                    <div class="container country-apac">
+                                        <!-- Row One -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Australia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Australia</p>
+                                            </div>
+                                            <!-- China -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">China</p>
+                                            </div>
+                                            <!-- Hong Kong -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Hong Kong</p>
+                                            </div>
+                                            <!-- India -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">India</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Two -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Indonesia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Indonesia</p>
+                                            </div>
+                                            <!-- Japan -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Japan</p>
+                                            </div>
+                                            <!-- Malaysia -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Malaysia</p>
+                                            </div>
+                                            <!-- New Zealand -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">New Zealand</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Three -->
+                                        <div class="row">
+                                            <!-- Philippines -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Philippines</p>
+                                            </div>
+                                            <!-- Korea -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Korea</p>
+                                            </div>
+                                            <!-- Singapore -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Singapore</p>
+                                            </div>
+                                            <!-- Taiwan -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Taiwan</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-5">
+                                    <!-- Europe -->
+                                    <h4 class="text-left text-dark choose-region" style="padding-left: 20px">Europe</h4>
+                                    <div class="container country-europe">
+                                        <!-- Row One -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Austria -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Austria</p>
+                                            </div>
+                                            <!-- Belgium-->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Belgium</p>
+                                            </div>
+                                            <!-- Finland -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Finland</p>
+                                            </div>
+                                            <!-- France -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">France</p>
+                                            </div>
+                                        </div>
+                                        <!-- Row Two -->
+                                        <div class="row mb-0 mb-lg-3">
+                                            <!-- Ireland -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Ireland</p>
+                                            </div>
+                                            <!-- Norway -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Norway</p>
+                                            </div>
+                                            <!-- Sweden -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">Sweden</p>
+                                            </div>
+                                            <!-- United Kingdom -->
+                                            <div class="col" style="display: flex; justify-content: left; align-items: center; margin-top: 16px;">
+                                                <img src="../assets/img/index/location.png" width="20px" height="20px" class="ms-4 ms-lg-0">
+                                                <p class="ps-2 pe-2 text-dark my-auto">United Kingdown</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Close Button -->
+                                <button type="button" class="btn btn-secondary w-25 mt-0 m-5 mx-auto d-block" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Footer Nav Links -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="mb-4 font-weight-bold">NAVIGATION</h5>
-                    <p><a class="text-white text-decoration-none" href="../explore.html">Shop</a></p>
-                    <p><a class="text-white text-decoration-none" href="#">Rewards</a></p>
-                    <p><a class="text-white text-decoration-none" href="#">About</a></p>
-                    <p><a class="text-white text-decoration-none" href="#">Support</a></p>
+                    <h5 class="mb-4 font-weight-bold text-uppercase">Navigation</h5>
+                    <p><a href="../explore.html" class="text-white text-decoration-none">Shop</a></p>
+                    <p><a href="../rewards.html" class="text-white text-decoration-none">Rewards</a></p>
+                    <p><a href="../support.html" class="text-white text-decoration-none">Support</a></p>
                 </div>
+                <!-- Contact Us Section -->
                 <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3">
-                    <h5 class="mb-4 ">CONTACT US</h5>
+                    <h5 class="mb-4 text-uppercase">Contact Us</h5>
+                    <!-- Address -->
                     <p>
-                        Blk 31, Ngee Ann Polytechnic <br>
+                        Blk 31, Ngee Ann Polytechnic
+                        <br>
                         535 Clementi Rd, Singapore 599489
                     </p>
-                    <p><a class="text-white text-decoration-none" href="mailto:fake_contact@comzone.sg">Email:
-                        fake_contact@comzone.sg</a></p>
+                    <!-- Email -->
+                    <p><a href="mailto:fake_contact@comzone.sg" class="text-white text-decoration-none">Email: fake_contact@comzone.sg</a></p>
+                    <!-- Social Media Bar -->
                     <div class="d-flex">
                         <ul class="social-icon-ul ps-0">
                             <li><span class="social-icon social-facebook"><i class="fab fa-facebook"></i></span></li>
@@ -330,27 +480,26 @@
             </div>
             <hr class="mb-4">
             <div class="row align-items-center">
+                <!-- Copyright and Credits -->
                 <div class="col-md-6">
                     <span>&copy; 2022 COMZONE. All Rights Reserved.<br></span>
-                    <span style="font-size: 12px;">DESIGNED BY <a class="text-decoration-none"
-                                                                  href="https://www.github.com/gg2shadow">XIAO YAOJIE</a> &
-                            <a class="text-decoration-none"
-                               href="https://www.github.com/iirquhs-np">SHUQRI SHAIFUDDIN</a></span>
+                    <span style="font-size: 12px;">DESIGNED BY <a href="https://www.github.com/gg2shadow" class="text-decoration-none" target="_blank">XIAO YAOJIE</a> &
+                        <a href="https://www.github.com/iirquhs-np" class="text-decoration-none" target="_blank">SHUQRI SHAIFUDDIN</a></span>
                 </div>
+                <!-- Policies -->
                 <div class="col-md-6 mt-3">
                     <div class="text-start text-md-end">
-                                <span>
-                                <a class="text-white text-decoration-none"
-                                   href="../termsofservice.html">Terms of Service</a> |
-                                <a class="text-white text-decoration-none"
-                                   href="../datanotice.html">Data Protection Notice</a>
-                                </span>
+                        <span>
+                            <a href="../termsofservice.html" class="text-white text-decoration-none">Terms of Service</a> |
+                            <a href="../datanotice.html" class="text-white text-decoration-none">Data Protection Notice</a>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <!-- FOOTER: END -->
+
     <!-- BACK TO TOP BUTTON: START -->
     <button
             class="btn btn-danger btn-floating btn-lg"

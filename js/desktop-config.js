@@ -3,6 +3,10 @@ const mainDB = "https://comzone-9f7d.restdb.io/rest/desktop-parts";
 const APIKEY = "6208844f34fd62156585842e";
 
 $(document).ready(function () {
+    let formatter = new Intl.NumberFormat('en-SG', {
+        style: 'currency',
+        currency: countryISO4217
+    });
     $('#cart').scrollToFixed({
         marginTop: 50,
     });
@@ -28,23 +32,39 @@ $(document).ready(function () {
         });
 
         ajaxFuncGET(mainDB).done(function (response) {
-            configurator(response, page, basePrice)
+            configurator(response, page, basePrice, formatter)
+            $(".price-slashed").each(function () {
+                let currentPrice = $(this).attr("data-price");
+                currentPrice = Number(currentPrice.replace(/[^0-9.-]+/g,""));
+                let newPrice = formatter.format(currentPrice * conversionRate);
+                $(this).html(`<del><emphasis>${newPrice}</emphasis></del>`);
+            });
+            $(".price").each(function () {
+                let currentPrice = $(this).attr("data-price");
+                currentPrice = Number(currentPrice.replace(/[^0-9.-]+/g,""));
+                let newPrice = formatter.format(currentPrice * conversionRate);
+                $(this).html(`<strong>${newPrice}</strong>`);
+            })
+            let price = formatter.format((basePrice + getSubtotal()) * conversionRate);
+            $("#subtotal").html(`<strong>${price}</strong>`);
         });
+
+
     });
 
-
     $(document).on("click", function () {
-        let price = formatter.format(basePrice + getSubtotal());
+        let price = formatter.format((basePrice + getSubtotal()) * conversionRate);
         $("#subtotal").html(`<strong>${price}</strong>`);
     });
 
     // WHEN CLICK ADD TO CART
     $("#addToCartButton").on("click", function () {
-        addItemToCart(userCart, basePrice, page);
+        addItemToCart(userCart, basePrice, page, formatter);
+
     });
 });
 
-function addItemToCart(userCart, basePrice, page) {
+function addItemToCart(userCart, basePrice, page, formatter) {
     let finalPrice = basePrice + getSubtotal();
 
     let warrantyName = $('input[name=warranty]:checked')[0].value;
@@ -82,48 +102,29 @@ function addItemToCart(userCart, basePrice, page) {
         "os": osName
     };
     let cart = [desktopConfiguration, 1, finalPrice];
-    console.log(cart);
 
     userCart.push(cart);
-    console.log(userCart);
     localStorage.setItem("userCart", JSON.stringify(userCart));
     window.location.assign("../cart.html");
 }
 
-
-
 function getSubtotal() {
-    let warranty = $("#" + $('input[name=warranty]:checked')[0].id + "-price")[0].textContent;
-    let chassis = $("#" + $('input[name=chassis]:checked')[0].id + "-price")[0].textContent;
-    let cpu = $("#" + $('input[name=cpu]:checked')[0].id + "-price")[0].textContent;
-    let motherboard = $("#" + $('input[name=motherboard]:checked')[0].id + "-price")[0].textContent;
-    let gpu = $("#" + $('input[name=gpu]:checked')[0].id + "-price")[0].textContent;
-    let thermalCompound = $("#" + $('input[name=thermal-compound]:checked')[0].id + "-price")[0].textContent;
-    let ram = $("#" + $('input[name=ram]:checked')[0].id + "-price")[0].textContent;
-    let cpuCooler = $("#" + $('input[name=cpu-cooling-system]:checked')[0].id + "-price")[0].textContent
-    let primarySSD = $("#" + $('input[name=primary-ssd]:checked')[0].id + "-price")[0].textContent
-    let secondarySSD = $("#" + $('input[name=secondary-ssd]:checked')[0].id + "-price")[0].textContent
-    let hdd = $("#" + $('input[name=hdd]:checked')[0].id + "-price")[0].textContent
-    let chassisFans = $("#" + $('input[name=chassis-fans]:checked')[0].id + "-price")[0].textContent
-    let psu = $("#" + $('input[name=psu]:checked')[0].id + "-price")[0].textContent
-    let wirelessLAN = $("#" + $('input[name=wireless-lan]:checked')[0].id + "-price")[0].textContent
-    let os = $("#" + $('input[name=os]:checked')[0].id + "-price")[0].textContent
 
-    warranty = Number(warranty.replace(/[^0-9.-]+/g,""));
-    chassis = Number(chassis.replace(/[^0-9.-]+/g,""));
-    cpu = Number(cpu.replace(/[^0-9.-]+/g,""));
-    motherboard = Number(motherboard.replace(/[^0-9.-]+/g,""));
-    gpu = Number(gpu.replace(/[^0-9.-]+/g,""));
-    thermalCompound = Number(thermalCompound.replace(/[^0-9.-]+/g,""));
-    ram = Number(ram.replace(/[^0-9.-]+/g,""));
-    cpuCooler = Number(cpuCooler.replace(/[^0-9.-]+/g,""));
-    primarySSD = Number(primarySSD.replace(/[^0-9.-]+/g,""));
-    secondarySSD = Number(secondarySSD.replace(/[^0-9.-]+/g,""));
-    hdd = Number(hdd.replace(/[^0-9.-]+/g,""));
-    chassisFans = Number(chassisFans.replace(/[^0-9.-]+/g,""));
-    psu = Number(psu.replace(/[^0-9.-]+/g,""));
-    wirelessLAN = Number(wirelessLAN.replace(/[^0-9.-]+/g,""));
-    os = Number(os.replace(/[^0-9.-]+/g,""));
+    let warranty = Number($('input[name=warranty]:checked').attr("data-price"));
+    let chassis = Number($('input[name=chassis]:checked').attr("data-price"));
+    let cpu = Number($('input[name=cpu]:checked').attr("data-price"));
+    let motherboard = Number($('input[name=motherboard]:checked').attr("data-price"));
+    let gpu = Number($('input[name=gpu]:checked').attr("data-price"));
+    let thermalCompound = Number($('input[name=thermal-compound]:checked').attr("data-price"));
+    let ram = Number($('input[name=ram]:checked').attr("data-price"));
+    let cpuCooler = Number($('input[name=cpu-cooling-system]:checked').attr("data-price"));
+    let primarySSD = Number($('input[name=primary-ssd]:checked').attr("data-price"));
+    let secondarySSD = Number($('input[name=secondary-ssd]:checked').attr("data-price"));
+    let hdd = Number($('input[name=hdd]:checked').attr("data-price"));
+    let chassisFans = Number($('input[name=chassis-fans]:checked').attr("data-price"));
+    let psu = Number($('input[name=psu]:checked').attr("data-price"));
+    let wirelessLAN = Number($('input[name=wireless-lan]:checked').attr("data-price"));
+    let os = Number($('input[name=os]:checked').attr("data-price"));
 
     
     return warranty + chassis + cpu + motherboard + gpu + thermalCompound +
@@ -153,7 +154,7 @@ function configurator(response, page, basePrice) {
                 if (sectionName === section) {
                     let system = part.system.toLowerCase();
                     let specs = part.specification;
-                    let price = formatter.format(part.price);
+                    let price = part.price;
                     let discountBool = part.discounted;
                     let checkedBool = part.checked.toLowerCase();
                     let stockAmt = part.stock;
@@ -170,16 +171,15 @@ function configurator(response, page, basePrice) {
 
                     // CHECK ITEM HAS DISCOUNT
                     let priceContents = "";
+                    let discountPrice = part.discount;
                     if (discountBool === "true") {
-                        let discountPrice = formatter.format(part.discount);
-
                         priceContents = `<div style="display: flex; justify-content: left; align-items: center; margin-bottom: -17px;">
-                                            <p class="text-dark mt-1" style="line-height: 10px;"><del><emphasis>${price}</del></p>
-                                            <p id="${sectionID}-${i}-price" class="ps-2 text-primary mt-1"><strong>${discountPrice}</strong></p>
+                                            <p class="text-dark mt-1 price-slashed" data-price="${price}" style="line-height: 10px;"><del><emphasis></del></p>
+                                            <p id="${sectionID}-${i}-price" data-price="${discountPrice}" class="ps-2 text-primary mt-1 price"><strong></strong></p>
                                         </div>`
                     }
                     else {
-                        priceContents = `<p id="${sectionID}-${i}-price" class="text-primary mt-1" style="line-height: 10px;"><strong>${price}</strong></p>`
+                        priceContents = `<p id="${sectionID}-${i}-price" class="text-primary mt-1 price" data-price="${price}" style="line-height: 10px;"><strong></strong></p>`
                     }
 
                     // CHECK IF ITEM IN STOCK
@@ -194,20 +194,27 @@ function configurator(response, page, basePrice) {
                                             <p class="ps-2 text-danger"><strong>Out of stock</strong></p>
                                         </div>`;
                     }
-                    /*
-                    content = `${content}
-                                <div>
-                                    <p>Hi! ${i}</p>
-                                </div>`*/
-                    content = `${content}
+                    if (discountBool === "true") {
+                        content = `${content}
+                                    <div class="form-check">
+                                        <input class="form-check-input ${system}" type="radio" name="${sectionID}" id="${sectionID}-${i}" value="${specs}"${checked} data-price="${discountPrice}">
+                                        <label for="${sectionID}-${i}" class="form-check-label">
+                                            ${specsContents}
+                                            ${priceContents}
+                                        </label>
+                                    </div>`
+                    }
+                    else {
+                        content = `${content}
+                                    <div class="form-check">
+                                        <input class="form-check-input ${system}" type="radio" name="${sectionID}" id="${sectionID}-${i}" value="${specs}"${checked} data-price="${price}">
+                                        <label for="${sectionID}-${i}" class="form-check-label">
+                                            ${specsContents}
+                                            ${priceContents}
+                                        </label>
+                                    </div>`
+                    }
 
-                    <div class="form-check">
-                            <input class="form-check-input ${system}" type="radio" name="${sectionID}" id="${sectionID}-${i}" value="${specs}"${checked}>
-                            <label for="${sectionID}-${i}" class="form-check-label">
-                                ${specsContents}
-                                ${priceContents}
-                            </label>
-                            </div>`
                     i++
                 }
             }
@@ -215,7 +222,7 @@ function configurator(response, page, basePrice) {
         });
         $("#" + sectionID).html(content);
     });
-    let price = formatter.format(basePrice + getSubtotal());
+    let price = formatter.format((basePrice + getSubtotal()) * conversionRate);
     $("#subtotal").html(`<strong>${price}</strong>`);
     $("#spinner").hide();
     $("#configure-system").show();
